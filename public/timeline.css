@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Standalone Horizontal Timeline & Engineering Trajectory UI System
    ========================================================================== */
 
@@ -312,9 +312,9 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 7800px;
+  min-width: 11800px;
   height: 100%;
-  padding: 0 100px;
+  padding: 0 140px;
 }
 
 /* Swimlane Indicators */
@@ -353,12 +353,12 @@ html, body {
 }
 
 /* ==========================================================================
-   TOP SWIMLANE: Personal Projects (Staggered Pins)
+   TOP SWIMLANE: Personal Projects (4-Tier Staggered Pins)
    ========================================================================== */
 
 .swimlane-projects {
   position: relative;
-  height: 260px;
+  height: 290px;
   width: 100%;
   margin-bottom: 0;
 }
@@ -387,14 +387,15 @@ html, body {
 .project-pin-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
+  gap: 7px;
+  padding: 5px 11px;
   border-radius: 999px;
   background: var(--bg-glass);
   border: 1px solid rgba(16, 185, 129, 0.4);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
+  font-size: 0.8rem;
   transition: all 180ms ease;
 }
 
@@ -405,7 +406,7 @@ html, body {
 }
 
 .project-badge {
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 850;
   padding: 1px 6px;
   border-radius: 999px;
@@ -417,13 +418,26 @@ html, body {
 
 .project-stem-down {
   width: 2px;
-  height: 28px;
+  height: 26px;
   background: linear-gradient(180deg, var(--color-project) 0%, rgba(16, 185, 129, 0.5) 100%);
   box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
 }
 
+/* 4-Tier Staggering for Personal Projects */
+.project-pin-item.tier-1 .project-stem-down {
+  height: 26px;
+}
+
 .project-pin-item.tier-2 .project-stem-down {
-  height: 95px;
+  height: 86px;
+}
+
+.project-pin-item.tier-3 .project-stem-down {
+  height: 146px;
+}
+
+.project-pin-item.tier-4 .project-stem-down {
+  height: 206px;
 }
 
 .project-node-axis {
@@ -523,7 +537,7 @@ html, body {
 
 .swimlane-ai {
   position: relative;
-  height: 280px;
+  height: 290px;
   width: 100%;
   margin-top: 0;
 }
@@ -593,22 +607,26 @@ html, body {
 /* 2. Stem connecting down from axis into the pin */
 .ai-stem-down {
   width: 2px;
-  height: 28px;
+  height: 26px;
   background: linear-gradient(180deg, #6366f1 0%, rgba(99, 102, 241, 0.4) 100%);
   box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
 }
 
-/* 3-Tier Staggering Heights */
+/* 4-Tier Staggering Heights */
 .ai-pin-item.tier-1 .ai-stem-down {
-  height: 28px;
+  height: 26px;
 }
 
 .ai-pin-item.tier-2 .ai-stem-down {
-  height: 90px;
+  height: 86px;
 }
 
 .ai-pin-item.tier-3 .ai-stem-down {
-  height: 155px;
+  height: 146px;
+}
+
+.ai-pin-item.tier-4 .ai-stem-down {
+  height: 206px;
 }
 
 .ai-pin-item.source-openai .ai-stem-down {
@@ -640,14 +658,15 @@ html, body {
 .ai-pin-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
+  gap: 7px;
+  padding: 5px 11px;
   border-radius: 999px;
   background: var(--bg-glass);
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
+  font-size: 0.8rem;
   transition: all 180ms ease;
 }
 
