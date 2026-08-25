@@ -1,0 +1,13 @@
+{
+  "name": "CVUT Crossroad",
+  "short_name": "CVUT Links",
+  "description": "Fast access to CVUT student systems, services, and support.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f1",
+  "theme_color": "#0f5b4c",
+  "lang": "en",
+  "categories": ["education", "productivity", "utilities"]
+}

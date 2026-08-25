@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f5f7f2">
+    <meta
+      name="description"
+      content="Find the right CVUT service fast: KOS, Moodle, accounts, Wi-Fi, dorms, canteens, cards, libraries, faculties, support, and student life."
+    >
+    <meta name="google-adsense-account" content="ca-pub-5130250257197597">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CVUT Crossroad">
+    <meta property="og:title" content="CVUT Crossroad — the right student link, fast">
+    <meta property="og:description" content="A searchable, unofficial shortcut board for CVUT systems, services, and student life.">
+    <meta property="og:url" content="https://cvut-crossroad.com/">
+    <meta property="og:image" content="https://cvut-crossroad.com/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CVUT Crossroad — the right student link, fast">
+    <meta name="twitter:description" content="Search CVUT study, IT, campus, support, and student-life services in one place.">
+    <meta name="twitter:image" content="https://cvut-crossroad.com/og.png">
+    <title>CVUT Crossroad | Student systems and services</title>
+    <link rel="canonical" href="https://cvut-crossroad.com/">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./styles.css?v=20260811-checklist">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CVUT Crossroad",
+        "url": "https://cvut-crossroad.com/",
+        "description": "Unofficial shortcut board for CVUT study systems, IT services, campus life, and student support.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://cvut-crossroad.com/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="CVUT Crossroad home">
+          <span class="brand-mark" aria-hidden="true">CV</span>
+          <span>
+            <span class="eyebrow" id="site-label">Unofficial CVUT Links</span>
+            <span class="site-title" id="site-title">CVUT Crossroad</span>
+          </span>
+        </a>
+        <p class="site-subtitle" id="site-subtitle">
+          The right CVUT service for the task in front of you.
+        </p>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="./" aria-current="page">Links</a>
+          <a href="./guide">Student guide</a>
+          <a href="./checklist">First-year checklist</a>
+          <a href="./about">About</a>
+          <a href="./sources">Sources</a>
+          <a href="./privacy">Privacy</a>
+          <a href="./contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section class="hero-panel" aria-labelledby="intro-heading">
+          <div class="hero-copy">
+            <span class="filter-label">Student shortcut board</span>
+            <h1 id="intro-heading">Stop hunting for the right CVUT website.</h1>
+            <p>
+              Search one curated directory for study administration, course materials, passwords, Wi-Fi, dorms, meals, cards, libraries, support, and faculty services. Every result takes you to the service that owns the task.
+            </p>
+            <div class="trust-row" aria-label="Directory facts">
+              <span><strong id="catalog-count">66</strong> useful destinations</span>
+              <span>Official sources preferred</span>
+              <span>No account required</span>
+            </div>
+          </div>
+          <aside class="first-step-card" aria-labelledby="first-step-heading">
+            <span class="step-number" aria-hidden="true">01</span>
+            <div>
+              <h2 id="first-step-heading">New to CVUT?</h2>
+              <p>Start with your CTU password, then UserMap, KOS, Moodle, email, eduroam, and your student card.</p>
+              <div class="first-step-actions">
+                <a href="./checklist">Open the setup checklist</a>
+                <button type="button" data-category-filter="First Year">Show first-year links</button>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="toolbar" aria-label="Find a CVUT service">
+          <div class="search-control">
+            <label class="search-box" for="search">
+              <span class="search-symbol" aria-hidden="true">⌕</span>
+              <span class="visually-hidden">Search CVUT links</span>
+              <input
+                id="search"
+                type="search"
+                inputmode="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="What do you need? Try KOS, Wi-Fi, card, dorm, counselling…"
+                aria-describedby="search-help"
+              >
+            </label>
+            <button class="clear-search" id="clear-search" type="button" hidden>Clear</button>
+            <span class="search-help" id="search-help"><kbd>/</kbd> focuses search · <kbd>Esc</kbd> clears it</span>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-heading">
+              <span class="filter-label">Browse by area</span>
+              <button class="text-button" id="reset-filters" type="button" hidden>Reset</button>
+            </div>
+            <div class="filter-row" id="filters" role="group" aria-label="Link categories"></div>
+          </div>
+
+          <div class="toolbar-options">
+            <button class="saved-filter" id="saved-filter" type="button" aria-pressed="false">
+              <span aria-hidden="true">★</span> Saved links <span id="saved-count">0</span>
+            </button>
+            <label class="sort-control" for="sort-links">
+              <span>Sort</span>
+              <select id="sort-links">
+                <option value="recommended">Recommended</option>
+                <option value="az">A–Z</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="task-board" aria-labelledby="task-heading">
+          <div>
+            <span class="filter-label">Fast paths</span>
+            <h2 id="task-heading">Jump straight to a common task</h2>
+          </div>
+          <div class="task-actions">
+            <button type="button" data-category-filter="Study">Study</button>
+            <button type="button" data-category-filter="Account & IT">Account &amp; IT</button>
+            <button type="button" data-category-filter="Dorms">Dorms</button>
+            <button type="button" data-category-filter="Meals">Meals</button>
+            <button type="button" data-category-filter="Support">Get support</button>
+            <button type="button" data-category-filter="International">International</button>
+          </div>
+        </section>
+
+        <section class="quick-access" id="quick-access" aria-labelledby="quick-heading" hidden>
+          <div class="section-heading-row">
+            <div>
+              <span class="filter-label">On this device</span>
+              <h2 id="quick-heading">Your shortcuts</h2>
+            </div>
+            <button class="text-button" id="clear-recent" type="button">Clear recent</button>
+          </div>
+          <div class="quick-grid" id="quick-grid"></div>
+        </section>
+
+        <div class="content-layout">
+          <section class="content-main" aria-labelledby="active-heading">
+            <section class="results-header" aria-live="polite">
+              <div>
+                <h2 id="active-heading">All links</h2>
+                <p id="active-summary">Recommended services appear first.</p>
+              </div>
+              <span id="result-count">0 links</span>
+            </section>
+
+            <section class="links-grid" id="links-grid" aria-label="CVUT service links"></section>
+            <noscript>
+              <div class="noscript-note">
+                <strong>JavaScript is off.</strong>
+                <p>The searchable directory needs JavaScript, but the <a href="./guide">Student Guide</a> and <a href="./sources">source list</a> still provide direct official links.</p>
+              </div>
+            </noscript>
+
+            <section class="empty-state" id="empty-state" hidden>
+              <span class="empty-mark" aria-hidden="true">?</span>
+              <h2>No matching service</h2>
+              <p>Try a broader word, remove the category, or show every link.</p>
+              <button type="button" id="empty-reset">Show all links</button>
+            </section>
+
+            <section class="guide-panel" aria-labelledby="guide-heading">
+              <div class="section-heading-row">
+                <div>
+                  <span class="filter-label">Choose confidently</span>
+                  <h2 id="guide-heading">The services students mix up most</h2>
+                </div>
+                <a class="text-link" href="./guide">Read the full student guide →</a>
+              </div>
+              <div class="guide-grid">
+                <article>
+                  <span class="guide-index">01</span>
+                  <h3>KOS or Moodle?</h3>
+                  <p><strong>KOS</strong> holds enrollment, exams, grades, and official study records. <strong>Moodle</strong> holds materials, assignments, quizzes, and course announcements.</p>
+                </article>
+                <article>
+                  <span class="guide-index">02</span>
+                  <h3>CTU password or eduroam?</h3>
+                  <p>Your main CTU password opens most university systems. Eduroam uses separate network credentials, so fix it through the Wi-Fi instructions.</p>
+                </article>
+                <article>
+                  <span class="guide-index">03</span>
+                  <h3>Student Card or Card Portal?</h3>
+                  <p>The Student Card page explains eligibility and collection. The Card Portal is the self-service place for photos, card administration, and digital ISIC services.</p>
+                </article>
+                <article>
+                  <span class="guide-index">04</span>
+                  <h3>ServiceDesk or CIPS?</h3>
+                  <p>Use ServiceDesk for a broken university service or account. Use CIPS for academic, psychological, social-legal, or personal support.</p>
+                </article>
+              </div>
+            </section>
+          </section>
+
+          <aside class="ad-panel" id="ad-panel" aria-label="Advertisement" hidden>
+            <span class="ad-label">Advertisement</span>
+            <div class="ad-slot" id="ad-slot"></div>
+          </aside>
+        </div>
+
+        <section class="how-it-works" aria-labelledby="how-heading">
+          <div>
+            <span class="filter-label">Built for quick decisions</span>
+            <h2 id="how-heading">Know the task. Find the owner.</h2>
+          </div>
+          <ol>
+            <li><strong>Describe the task.</strong><span>Search “exam,” “forgot password,” “lunch,” or any service name.</span></li>
+            <li><strong>Check the short note.</strong><span>Each description tells you what that destination is actually for.</span></li>
+            <li><strong>Continue officially.</strong><span>Deadlines, prices, access rules, and personal data stay on the linked CVUT service.</span></li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>CVUT Crossroad</strong>
+          <p>Unofficial and independent. Always verify deadlines, rules, and account instructions on the linked official university website.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="./guide">Guide</a>
+          <a href="./checklist">Checklist</a>
+          <a href="./about">About</a>
+          <a href="./sources">Sources</a>
+          <a href="./privacy">Privacy</a>
+          <a href="./contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="./links.js"></script>
+    <script src="./ads.js?v=20260811-checklist"></script>
+    <script src="./ads-loader.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

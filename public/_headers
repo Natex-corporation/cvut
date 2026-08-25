@@ -1,0 +1,28 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
+/styles.css
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/app.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/checklist.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/ads-loader.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/links.js
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/ads.js
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/og.png
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000

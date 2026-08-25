@@ -1,0 +1,409 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#060910">
+    <meta
+      name="description"
+      content="Interactive horizontal engineering trajectory and AI model release timeline (2020–2026) showcasing Insider Edge and frontier AI milestones."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Engineering Roadmap">
+    <meta property="og:title" content="Engineering Trajectory & AI Horizon Timeline">
+    <meta property="og:description" content="Horizontal interactive timeline of software engineering projects and major AI model releases.">
+    <meta property="og:url" content="https://cvut-crossroad.com/roadmap">
+    <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
+    <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./timeline.css">
+  </head>
+  <body>
+    <div class="ambient-glow" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <!-- Header Bar -->
+      <header class="timeline-header">
+        <div class="brand-section">
+          <div class="brand-badge">TX</div>
+          <div class="brand-text">
+            <h1>Engineering Trajectory &amp; AI Horizon</h1>
+            <p>2020–2026 Chronological Track &bull; Shipped Systems &bull; Model Epochs</p>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <nav class="filter-pills" aria-label="Milestone categories">
+            <button class="filter-btn active" data-filter="all" type="button">
+              All <span class="badge-count" id="count-all">0</span>
+            </button>
+            <button class="filter-btn filter-projects" data-filter="projects" type="button">
+              Projects <span class="badge-count" id="count-projects">0</span>
+            </button>
+            <button class="filter-btn filter-ai" data-filter="ai" type="button">
+              AI Models <span class="badge-count" id="count-ai">0</span>
+            </button>
+            <button class="filter-btn" data-filter="breakthrough" type="button">
+              Breakthroughs <span class="badge-count" id="count-breakthroughs">0</span>
+            </button>
+          </nav>
+
+          <div class="time-anchors" aria-label="Jump to timeline anchor">
+            <button class="time-btn" data-year="2020" type="button">2020</button>
+            <button class="time-btn" data-year="2022" type="button">2022</button>
+            <button class="time-btn" data-year="2023" type="button">2023</button>
+            <button class="time-btn" data-year="2024" type="button">2024</button>
+            <button class="time-btn" data-year="2025" type="button">2025</button>
+            <button class="time-btn highlight" data-year="2026" type="button">2026</button>
+            <button class="time-btn" data-year="latest" type="button">Latest &rarr;</button>
+          </div>
+
+          <div class="canvas-nav-actions" aria-label="Horizontal scroll navigation">
+            <button class="nav-arrow-btn" id="btn-scroll-left" type="button" aria-label="Scroll left">&larr;</button>
+            <button class="nav-arrow-btn" id="btn-scroll-right" type="button" aria-label="Scroll right">&rarr;</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Horizontal Timeline Viewport -->
+      <main class="timeline-viewport" id="timeline-viewport" tabindex="0" aria-label="Horizontal timeline canvas">
+        <div class="timeline-canvas">
+
+          <!-- Swimlane Indicators -->
+          <div class="swimlane-indicators" style="top: 90px;">
+            <span class="lane-tag lane-tag-project">&bull; Engineering Projects</span>
+          </div>
+          <div class="swimlane-indicators" style="bottom: 60px;">
+            <span class="lane-tag lane-tag-ai">&bull; AI Foundation Releases</span>
+          </div>
+
+          <!-- TOP SWIMLANE: Personal Engineering Projects -->
+          <section class="swimlane-projects" aria-label="Engineering Projects">
+
+            <!-- 2026: Insider Edge -->
+            <article class="milestone-item is-project" data-id="insider-edge" data-type="breakthrough" style="left: 4550px;">
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">August 2026</span>
+                  <span class="card-badge badge-project"><span class="pulse-dot"></span> Completed (v1.0.0)</span>
+                </div>
+                <h3 class="card-title">Insider Edge &mdash; SEC Form 4 Bot</h3>
+                <p class="card-desc">
+                  Automated insider trading bot with multi-tier risk guardrails, SQLite state engine, Starlette telemetry room, and TrueNAS SCALE automation.
+                </p>
+                <div class="card-tags">
+                  <span class="mini-tag">Python 3.11</span>
+                  <span class="mini-tag">Alpaca API</span>
+                  <span class="mini-tag">SQLite</span>
+                  <span class="mini-tag">Docker</span>
+                  <span class="mini-tag">Prometheus</span>
+                </div>
+                <span class="inspect-cue">Inspect Architecture &rarr;</span>
+              </div>
+              <div class="milestone-stem"></div>
+              <div class="stem-dot"></div>
+            </article>
+
+          </section>
+
+          <!-- CENTER AXIS: Chronological Time Ribbon -->
+          <div class="timeline-center-axis" aria-hidden="true">
+            <div class="axis-line"></div>
+
+            <div class="axis-year-marker" id="year-2020" style="left: 300px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2020</span>
+            </div>
+
+            <div class="axis-year-marker" id="year-2021" style="left: 800px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2021</span>
+            </div>
+
+            <div class="axis-year-marker" id="year-2022" style="left: 1300px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2022</span>
+            </div>
+
+            <div class="axis-year-marker" id="year-2023" style="left: 1800px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2023</span>
+            </div>
+
+            <div class="axis-year-marker" id="year-2024" style="left: 2600px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2024</span>
+            </div>
+
+            <div class="axis-year-marker" id="year-2025" style="left: 4150px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2025</span>
+            </div>
+
+            <div class="axis-year-marker is-current" id="year-2026" style="left: 4550px;">
+              <div class="axis-node"></div>
+              <span class="axis-year-label">2026 (Now)</span>
+            </div>
+          </div>
+
+          <!-- BOTTOM SWIMLANE: AI Frontier Releases -->
+          <section class="swimlane-ai" aria-label="AI Frontier Releases">
+
+            <!-- Jun 2020: GPT-3 -->
+            <article class="milestone-item is-ai" data-id="gpt-3" data-type="milestone" style="left: 450px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">June 2020</span>
+                  <span class="card-badge badge-ai">OpenAI</span>
+                </div>
+                <h3 class="card-title">GPT-3 (175B Parameters)</h3>
+                <p class="card-desc">Foundational autoregressive LLM proving few-shot in-context learning without specialized task tuning.</p>
+              </div>
+            </article>
+
+            <!-- Nov 2022: ChatGPT -->
+            <article class="milestone-item is-ai" data-id="chatgpt" data-type="breakthrough" style="left: 1450px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Nov 2022</span>
+                  <span class="card-badge badge-breakthrough">Catalyst</span>
+                </div>
+                <h3 class="card-title">ChatGPT (GPT-3.5 RLHF)</h3>
+                <p class="card-desc">Public launch of conversational reinforcement learning from human feedback, sparking worldwide generative AI explosion.</p>
+              </div>
+            </article>
+
+            <!-- Feb 2023: Meta LLaMA -->
+            <article class="milestone-item is-ai" data-id="llama-1" data-type="milestone" style="left: 1750px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Feb 2023</span>
+                  <span class="card-badge badge-ai">Meta</span>
+                </div>
+                <h3 class="card-title">LLaMA 1 (7B&ndash;65B)</h3>
+                <p class="card-desc">Foundational research weights released, igniting the open-source community, quantization, and local inferencing.</p>
+              </div>
+            </article>
+
+            <!-- Mar 2023: GPT-4 & Claude 1 -->
+            <article class="milestone-item is-ai" data-id="gpt-4" data-type="breakthrough" style="left: 1980px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">March 2023</span>
+                  <span class="card-badge badge-breakthrough">Frontier Leap</span>
+                </div>
+                <h3 class="card-title">OpenAI GPT-4 &amp; Claude 1</h3>
+                <p class="card-desc">Multimodal reasoning breakthrough passing Uniform Bar Exam at 90th percentile; Anthropic unveils Claude 1.</p>
+              </div>
+            </article>
+
+            <!-- Jul 2023: Llama 2 & Claude 2 -->
+            <article class="milestone-item is-ai" data-id="llama-2" data-type="milestone" style="left: 2200px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">July 2023</span>
+                  <span class="card-badge badge-ai">Open Weights</span>
+                </div>
+                <h3 class="card-title">Meta Llama 2 &amp; Claude 2</h3>
+                <p class="card-desc">Commercial open-source license for Llama 2; Claude 2 introduces 100k token context window.</p>
+              </div>
+            </article>
+
+            <!-- Dec 2023: Gemini 1.0 -->
+            <article class="milestone-item is-ai" data-id="gemini-1" data-type="milestone" style="left: 2420px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Dec 2023</span>
+                  <span class="card-badge badge-ai">Google</span>
+                </div>
+                <h3 class="card-title">Gemini 1.0 (Ultra &amp; Pro)</h3>
+                <p class="card-desc">Google's natively multimodal foundation model trained simultaneously across text, code, images, audio, and video.</p>
+              </div>
+            </article>
+
+            <!-- Feb 2024: Gemini 1.5 Pro -->
+            <article class="milestone-item is-ai" data-id="gemini-15" data-type="breakthrough" style="left: 2650px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Feb 2024</span>
+                  <span class="card-badge badge-breakthrough">Long Context</span>
+                </div>
+                <h3 class="card-title">Gemini 1.5 Pro (1M&ndash;2M Context)</h3>
+                <p class="card-desc">Introduction of million-token context window with near-perfect retrieval across massive codebases and full video feeds.</p>
+              </div>
+            </article>
+
+            <!-- Mar 2024: Claude 3 Family -->
+            <article class="milestone-item is-ai" data-id="claude-3" data-type="milestone" style="left: 2880px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">March 2024</span>
+                  <span class="card-badge badge-ai">Anthropic</span>
+                </div>
+                <h3 class="card-title">Claude 3 (Opus, Sonnet, Haiku)</h3>
+                <p class="card-desc">Tri-tier model suite with 200k context, near-instant Haiku, and Opus topping vision and academic benchmarks.</p>
+              </div>
+            </article>
+
+            <!-- Apr 2024: Llama 3 -->
+            <article class="milestone-item is-ai" data-id="llama-3" data-type="milestone" style="left: 3100px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">April 2024</span>
+                  <span class="card-badge badge-ai">Meta</span>
+                </div>
+                <h3 class="card-title">Meta Llama 3 (8B &amp; 70B)</h3>
+                <p class="card-desc">Trained on 15T+ tokens with 128k vocabulary tokenizer, establishing new high-water mark for open weights.</p>
+              </div>
+            </article>
+
+            <!-- May 2024: GPT-4o -->
+            <article class="milestone-item is-ai" data-id="gpt-4o" data-type="milestone" style="left: 3320px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">May 2024</span>
+                  <span class="card-badge badge-ai">OpenAI</span>
+                </div>
+                <h3 class="card-title">GPT-4o (&ldquo;Omni&rdquo;)</h3>
+                <p class="card-desc">Single end-to-end neural network natively handling text, vision, and real-time conversational audio latency.</p>
+              </div>
+            </article>
+
+            <!-- Jun 2024: Claude 3.5 Sonnet -->
+            <article class="milestone-item is-ai" data-id="claude-35" data-type="breakthrough" style="left: 3540px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">June 2024</span>
+                  <span class="card-badge badge-breakthrough">Coding Benchmark</span>
+                </div>
+                <h3 class="card-title">Claude 3.5 Sonnet</h3>
+                <p class="card-desc">Breakthrough state-of-the-art coding and agentic workflow model; introduces Artifacts interactive workspace.</p>
+              </div>
+            </article>
+
+            <!-- Jul 2024: Llama 3.1 405B -->
+            <article class="milestone-item is-ai" data-id="llama-31" data-type="milestone" style="left: 3760px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">July 2024</span>
+                  <span class="card-badge badge-ai">Open Frontier</span>
+                </div>
+                <h3 class="card-title">Meta Llama 3.1 (405B)</h3>
+                <p class="card-desc">Flagship 405B open-weights model rivaling top proprietary foundation models with 128k context support.</p>
+              </div>
+            </article>
+
+            <!-- Sep 2024: OpenAI o1-preview -->
+            <article class="milestone-item is-ai" data-id="o1-preview" data-type="breakthrough" style="left: 3980px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Sept 2024</span>
+                  <span class="card-badge badge-breakthrough">Reasoning Paradigm</span>
+                </div>
+                <h3 class="card-title">OpenAI o1-preview</h3>
+                <p class="card-desc">Shift to test-time compute: internal chain-of-thought step-by-step reasoning for competitive programming and STEM.</p>
+              </div>
+            </article>
+
+            <!-- Jan 2025: DeepSeek R1 & V3 -->
+            <article class="milestone-item is-ai" data-id="deepseek" data-type="breakthrough" style="left: 4180px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Jan 2025</span>
+                  <span class="card-badge badge-breakthrough">Open Reasoning</span>
+                </div>
+                <h3 class="card-title">DeepSeek R1 &amp; V3</h3>
+                <p class="card-desc">Pure RL reasoning model &amp; 671B MLA MoE architecture delivering frontier performance at unprecedented training efficiency.</p>
+              </div>
+            </article>
+
+            <!-- Feb 2025: Claude 3.7 Sonnet -->
+            <article class="milestone-item is-ai" data-id="claude-37" data-type="breakthrough" style="left: 4380px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">Feb 2025</span>
+                  <span class="card-badge badge-breakthrough">Hybrid Thinking</span>
+                </div>
+                <h3 class="card-title">Claude 3.7 Sonnet &amp; Gemini 2.0 Pro</h3>
+                <p class="card-desc">First hybrid model with dynamic thinking budget for instant answers or deep extended reasoning; leader in SWE benchmarks.</p>
+              </div>
+            </article>
+
+            <!-- 2026: Gemini 3 & Agentic Models -->
+            <article class="milestone-item is-ai" data-id="gemini-3" data-type="milestone" style="left: 4580px;">
+              <div class="stem-dot"></div>
+              <div class="milestone-stem"></div>
+              <div class="milestone-card">
+                <div class="card-header">
+                  <span class="card-date">2026</span>
+                  <span class="card-badge badge-ai">Frontier Agents</span>
+                </div>
+                <h3 class="card-title">Gemini 3 &amp; Autonomous Agents</h3>
+                <p class="card-desc">Autonomous code generation, verification sidecars, multi-agent coordination, and proactive environment execution.</p>
+              </div>
+            </article>
+
+          </section>
+
+        </div>
+      </main>
+
+      <!-- Footer Info Bar -->
+      <footer class="timeline-footer">
+        <div>
+          <span>Horizontal Chronological View (2020&ndash;2026)</span>
+        </div>
+        <div class="footer-keys">
+          <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
+          <span class="key-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> scroll</span>
+          <span class="key-hint"><kbd>Click</kbd> card to inspect</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Slide-Over Inspector Drawer -->
+    <div class="inspector-overlay" id="inspector-overlay"></div>
+    <aside class="inspector-drawer" id="inspector-drawer" aria-labelledby="drawer-title" aria-modal="true" role="dialog">
+      <div class="drawer-header">
+        <h2 id="drawer-title">Project Details</h2>
+        <button class="drawer-close-btn" id="drawer-close-btn" type="button" aria-label="Close drawer">&times;</button>
+      </div>
+      <div class="drawer-content" id="drawer-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </aside>
+
+    <script src="./timeline.js"></script>
+  </body>
+</html>

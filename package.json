@@ -1,0 +1,13 @@
+{
+  "name": "cvut-school-links",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "add-link": "node tools/add-link.mjs",
+    "check": "node tools/validate-site.mjs",
+    "check:links": "node tools/check-links.mjs",
+    "configure-ads": "node tools/configure-ads.mjs",
+    "preview": "npx wrangler pages dev public",
+    "deploy:cloudflare": "npx wrangler pages deploy public --project-name cvut-links"
+  }
+}
