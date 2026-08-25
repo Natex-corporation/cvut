@@ -42,7 +42,7 @@
               Projects <span class="badge-count" id="count-projects">0</span>
             </button>
             <button class="filter-btn filter-ai" data-filter="ai" type="button">
-              AI Models <span class="badge-count" id="count-ai">0</span>
+              AI Pins <span class="badge-count" id="count-ai">0</span>
             </button>
             <button class="filter-btn" data-filter="breakthrough" type="button">
               Breakthroughs <span class="badge-count" id="count-breakthroughs">0</span>
@@ -82,8 +82,8 @@
           <section class="swimlane-projects" aria-label="Engineering Projects">
 
             <!-- 2026: Insider Edge -->
-            <article class="milestone-item is-project" data-id="insider-edge" data-type="breakthrough" style="left: 4550px;">
-              <div class="milestone-card">
+            <article class="project-item" data-id="insider-edge" data-type="breakthrough" style="left: 4600px;">
+              <div class="project-card">
                 <div class="card-header">
                   <span class="card-date">August 2026</span>
                   <span class="card-badge badge-project"><span class="pulse-dot"></span> Completed (v1.0.0)</span>
@@ -101,8 +101,8 @@
                 </div>
                 <span class="inspect-cue">Inspect Architecture &rarr;</span>
               </div>
-              <div class="milestone-stem"></div>
-              <div class="stem-dot"></div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
             </article>
 
           </section>
@@ -141,236 +141,252 @@
               <span class="axis-year-label">2025</span>
             </div>
 
-            <div class="axis-year-marker is-current" id="year-2026" style="left: 4550px;">
+            <div class="axis-year-marker is-current" id="year-2026" style="left: 4600px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2026 (Now)</span>
             </div>
           </div>
 
-          <!-- BOTTOM SWIMLANE: AI Frontier Releases -->
+          <!-- BOTTOM SWIMLANE: AI Frontier Releases (Collapsed Pins) -->
           <section class="swimlane-ai" aria-label="AI Frontier Releases">
 
             <!-- Jun 2020: GPT-3 -->
-            <article class="milestone-item is-ai" data-id="gpt-3" data-type="milestone" style="left: 450px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">June 2020</span>
-                  <span class="card-badge badge-ai">OpenAI</span>
-                </div>
-                <h3 class="card-title">GPT-3 (175B Parameters)</h3>
-                <p class="card-desc">Foundational autoregressive LLM proving few-shot in-context learning without specialized task tuning.</p>
+            <article class="ai-pin-item tier-1" data-id="gpt-3" data-type="milestone" style="left: 450px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Jun 2020</span>
+                <span class="pin-title">GPT-3</span>
+                <span class="pin-badge">OpenAI</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">175B foundation autoregressive LLM proving few-shot in-context learning.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Nov 2022: ChatGPT -->
-            <article class="milestone-item is-ai" data-id="chatgpt" data-type="breakthrough" style="left: 1450px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Nov 2022</span>
-                  <span class="card-badge badge-breakthrough">Catalyst</span>
-                </div>
-                <h3 class="card-title">ChatGPT (GPT-3.5 RLHF)</h3>
-                <p class="card-desc">Public launch of conversational reinforcement learning from human feedback, sparking worldwide generative AI explosion.</p>
+            <article class="ai-pin-item tier-1" data-id="chatgpt" data-type="breakthrough" style="left: 1450px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Nov 2022</span>
+                <span class="pin-title">ChatGPT (GPT-3.5)</span>
+                <span class="pin-badge badge-breakthrough">Catalyst</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Public launch of conversational RLHF model, igniting the global generative AI explosion.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Feb 2023: Meta LLaMA -->
-            <article class="milestone-item is-ai" data-id="llama-1" data-type="milestone" style="left: 1750px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Feb 2023</span>
-                  <span class="card-badge badge-ai">Meta</span>
-                </div>
-                <h3 class="card-title">LLaMA 1 (7B&ndash;65B)</h3>
-                <p class="card-desc">Foundational research weights released, igniting the open-source community, quantization, and local inferencing.</p>
+            <article class="ai-pin-item tier-2" data-id="llama-1" data-type="milestone" style="left: 1750px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Feb 2023</span>
+                <span class="pin-title">LLaMA 1</span>
+                <span class="pin-badge">Meta</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">7B–65B open research weights kickstarting the modern open-source LLM community and local inference.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Mar 2023: GPT-4 & Claude 1 -->
-            <article class="milestone-item is-ai" data-id="gpt-4" data-type="breakthrough" style="left: 1980px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">March 2023</span>
-                  <span class="card-badge badge-breakthrough">Frontier Leap</span>
-                </div>
-                <h3 class="card-title">OpenAI GPT-4 &amp; Claude 1</h3>
-                <p class="card-desc">Multimodal reasoning breakthrough passing Uniform Bar Exam at 90th percentile; Anthropic unveils Claude 1.</p>
+            <article class="ai-pin-item tier-1" data-id="gpt-4" data-type="breakthrough" style="left: 1980px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Mar 2023</span>
+                <span class="pin-title">GPT-4 &amp; Claude 1</span>
+                <span class="pin-badge badge-breakthrough">Frontier</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Multimodal reasoning breakthrough passing Bar Exam at 90th percentile; Claude 1 debuts.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Jul 2023: Llama 2 & Claude 2 -->
-            <article class="milestone-item is-ai" data-id="llama-2" data-type="milestone" style="left: 2200px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">July 2023</span>
-                  <span class="card-badge badge-ai">Open Weights</span>
-                </div>
-                <h3 class="card-title">Meta Llama 2 &amp; Claude 2</h3>
-                <p class="card-desc">Commercial open-source license for Llama 2; Claude 2 introduces 100k token context window.</p>
+            <article class="ai-pin-item tier-2" data-id="llama-2" data-type="milestone" style="left: 2200px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Jul 2023</span>
+                <span class="pin-title">Llama 2 &amp; Claude 2</span>
+                <span class="pin-badge">100k Context</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Commercial open-source license for Llama 2; Claude 2 introduces 100k token context window.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Dec 2023: Gemini 1.0 -->
-            <article class="milestone-item is-ai" data-id="gemini-1" data-type="milestone" style="left: 2420px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Dec 2023</span>
-                  <span class="card-badge badge-ai">Google</span>
-                </div>
-                <h3 class="card-title">Gemini 1.0 (Ultra &amp; Pro)</h3>
-                <p class="card-desc">Google's natively multimodal foundation model trained simultaneously across text, code, images, audio, and video.</p>
+            <article class="ai-pin-item tier-1" data-id="gemini-1" data-type="milestone" style="left: 2420px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Dec 2023</span>
+                <span class="pin-title">Gemini 1.0 (Ultra/Pro)</span>
+                <span class="pin-badge">Google</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Google's native multimodal model trained across text, code, images, audio, and video.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Feb 2024: Gemini 1.5 Pro -->
-            <article class="milestone-item is-ai" data-id="gemini-15" data-type="breakthrough" style="left: 2650px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Feb 2024</span>
-                  <span class="card-badge badge-breakthrough">Long Context</span>
-                </div>
-                <h3 class="card-title">Gemini 1.5 Pro (1M&ndash;2M Context)</h3>
-                <p class="card-desc">Introduction of million-token context window with near-perfect retrieval across massive codebases and full video feeds.</p>
+            <article class="ai-pin-item tier-2" data-id="gemini-15" data-type="breakthrough" style="left: 2650px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Feb 2024</span>
+                <span class="pin-title">Gemini 1.5 Pro (2M)</span>
+                <span class="pin-badge badge-breakthrough">Long Context</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Breakthrough 1M–2M token context window with near-perfect retrieval across massive codebases.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Mar 2024: Claude 3 Family -->
-            <article class="milestone-item is-ai" data-id="claude-3" data-type="milestone" style="left: 2880px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">March 2024</span>
-                  <span class="card-badge badge-ai">Anthropic</span>
-                </div>
-                <h3 class="card-title">Claude 3 (Opus, Sonnet, Haiku)</h3>
-                <p class="card-desc">Tri-tier model suite with 200k context, near-instant Haiku, and Opus topping vision and academic benchmarks.</p>
+            <article class="ai-pin-item tier-1" data-id="claude-3" data-type="milestone" style="left: 2880px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Mar 2024</span>
+                <span class="pin-title">Claude 3 (Opus/Sonnet)</span>
+                <span class="pin-badge">Anthropic</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Tri-tier model suite with 200k context and Opus topping benchmark leaderboards.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Apr 2024: Llama 3 -->
-            <article class="milestone-item is-ai" data-id="llama-3" data-type="milestone" style="left: 3100px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">April 2024</span>
-                  <span class="card-badge badge-ai">Meta</span>
-                </div>
-                <h3 class="card-title">Meta Llama 3 (8B &amp; 70B)</h3>
-                <p class="card-desc">Trained on 15T+ tokens with 128k vocabulary tokenizer, establishing new high-water mark for open weights.</p>
+            <article class="ai-pin-item tier-2" data-id="llama-3" data-type="milestone" style="left: 3100px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Apr 2024</span>
+                <span class="pin-title">Meta Llama 3 (70B)</span>
+                <span class="pin-badge">Meta</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Trained on 15T+ tokens with 128k vocabulary tokenizer, setting open-weights records.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- May 2024: GPT-4o -->
-            <article class="milestone-item is-ai" data-id="gpt-4o" data-type="milestone" style="left: 3320px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">May 2024</span>
-                  <span class="card-badge badge-ai">OpenAI</span>
-                </div>
-                <h3 class="card-title">GPT-4o (&ldquo;Omni&rdquo;)</h3>
-                <p class="card-desc">Single end-to-end neural network natively handling text, vision, and real-time conversational audio latency.</p>
+            <article class="ai-pin-item tier-1" data-id="gpt-4o" data-type="milestone" style="left: 3320px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">May 2024</span>
+                <span class="pin-title">OpenAI GPT-4o</span>
+                <span class="pin-badge">Omni</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Single end-to-end neural network natively handling text, vision, and real-time audio.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Jun 2024: Claude 3.5 Sonnet -->
-            <article class="milestone-item is-ai" data-id="claude-35" data-type="breakthrough" style="left: 3540px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">June 2024</span>
-                  <span class="card-badge badge-breakthrough">Coding Benchmark</span>
-                </div>
-                <h3 class="card-title">Claude 3.5 Sonnet</h3>
-                <p class="card-desc">Breakthrough state-of-the-art coding and agentic workflow model; introduces Artifacts interactive workspace.</p>
+            <article class="ai-pin-item tier-2" data-id="claude-35" data-type="breakthrough" style="left: 3540px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Jun 2024</span>
+                <span class="pin-title">Claude 3.5 Sonnet</span>
+                <span class="pin-badge badge-breakthrough">Coding SOTA</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Breakthrough coding and agentic workflow model; introduces Artifacts workspace.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Jul 2024: Llama 3.1 405B -->
-            <article class="milestone-item is-ai" data-id="llama-31" data-type="milestone" style="left: 3760px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">July 2024</span>
-                  <span class="card-badge badge-ai">Open Frontier</span>
-                </div>
-                <h3 class="card-title">Meta Llama 3.1 (405B)</h3>
-                <p class="card-desc">Flagship 405B open-weights model rivaling top proprietary foundation models with 128k context support.</p>
+            <article class="ai-pin-item tier-1" data-id="llama-31" data-type="milestone" style="left: 3760px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Jul 2024</span>
+                <span class="pin-title">Llama 3.1 (405B)</span>
+                <span class="pin-badge">Open Frontier</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Flagship 405B open-weights model rivaling top proprietary foundation models with 128k context.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Sep 2024: OpenAI o1-preview -->
-            <article class="milestone-item is-ai" data-id="o1-preview" data-type="breakthrough" style="left: 3980px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Sept 2024</span>
-                  <span class="card-badge badge-breakthrough">Reasoning Paradigm</span>
-                </div>
-                <h3 class="card-title">OpenAI o1-preview</h3>
-                <p class="card-desc">Shift to test-time compute: internal chain-of-thought step-by-step reasoning for competitive programming and STEM.</p>
+            <article class="ai-pin-item tier-2" data-id="o1-preview" data-type="breakthrough" style="left: 3980px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Sep 2024</span>
+                <span class="pin-title">OpenAI o1-preview</span>
+                <span class="pin-badge badge-breakthrough">Reasoning</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Shift to test-time compute: internal chain-of-thought step-by-step reasoning for competitive coding.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Jan 2025: DeepSeek R1 & V3 -->
-            <article class="milestone-item is-ai" data-id="deepseek" data-type="breakthrough" style="left: 4180px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Jan 2025</span>
-                  <span class="card-badge badge-breakthrough">Open Reasoning</span>
-                </div>
-                <h3 class="card-title">DeepSeek R1 &amp; V3</h3>
-                <p class="card-desc">Pure RL reasoning model &amp; 671B MLA MoE architecture delivering frontier performance at unprecedented training efficiency.</p>
+            <article class="ai-pin-item tier-1" data-id="deepseek" data-type="breakthrough" style="left: 4180px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Jan 2025</span>
+                <span class="pin-title">DeepSeek R1 &amp; V3</span>
+                <span class="pin-badge badge-breakthrough">Open Reasoning</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Pure RL reasoning model &amp; 671B MLA MoE architecture delivering frontier performance at high efficiency.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- Feb 2025: Claude 3.7 Sonnet -->
-            <article class="milestone-item is-ai" data-id="claude-37" data-type="breakthrough" style="left: 4380px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">Feb 2025</span>
-                  <span class="card-badge badge-breakthrough">Hybrid Thinking</span>
-                </div>
-                <h3 class="card-title">Claude 3.7 Sonnet &amp; Gemini 2.0 Pro</h3>
-                <p class="card-desc">First hybrid model with dynamic thinking budget for instant answers or deep extended reasoning; leader in SWE benchmarks.</p>
+            <article class="ai-pin-item tier-2" data-id="claude-37" data-type="breakthrough" style="left: 4380px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">Feb 2025</span>
+                <span class="pin-title">Claude 3.7 Sonnet</span>
+                <span class="pin-badge badge-breakthrough">Hybrid Thinking</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">First hybrid model with dynamic thinking budget for instant answers or deep extended reasoning.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
             <!-- 2026: Gemini 3 & Agentic Models -->
-            <article class="milestone-item is-ai" data-id="gemini-3" data-type="milestone" style="left: 4580px;">
-              <div class="stem-dot"></div>
-              <div class="milestone-stem"></div>
-              <div class="milestone-card">
-                <div class="card-header">
-                  <span class="card-date">2026</span>
-                  <span class="card-badge badge-ai">Frontier Agents</span>
-                </div>
-                <h3 class="card-title">Gemini 3 &amp; Autonomous Agents</h3>
-                <p class="card-desc">Autonomous code generation, verification sidecars, multi-agent coordination, and proactive environment execution.</p>
+            <article class="ai-pin-item tier-1" data-id="gemini-3" data-type="milestone" style="left: 4620px;">
+              <div class="ai-axis-dot"></div>
+              <div class="ai-stem-down"></div>
+              <div class="ai-pin-pill">
+                <span class="pin-date">2026</span>
+                <span class="pin-title">Gemini 3 &amp; Agents</span>
+                <span class="pin-badge">Frontier Agents</span>
+              </div>
+              <div class="pin-popover">
+                <p class="popover-desc">Autonomous code generation, verification sidecars, multi-agent coordination, and proactive environment execution.</p>
+                <span class="popover-hint">Click to inspect &rarr;</span>
               </div>
             </article>
 
@@ -382,12 +398,13 @@
       <!-- Footer Info Bar -->
       <footer class="timeline-footer">
         <div>
-          <span>Horizontal Chronological View (2020&ndash;2026)</span>
+          <span>Horizontal Chronological View (2020&ndash;2026) &bull; Collapsed Interactive Pins</span>
         </div>
         <div class="footer-keys">
           <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
           <span class="key-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> scroll</span>
-          <span class="key-hint"><kbd>Click</kbd> card to inspect</span>
+          <span class="key-hint"><kbd>Hover</kbd> for quick preview</span>
+          <span class="key-hint"><kbd>Click</kbd> pin to inspect</span>
         </div>
       </footer>
     </div>

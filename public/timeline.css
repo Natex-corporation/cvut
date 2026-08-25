@@ -6,7 +6,7 @@
   --bg-deep: #060910;
   --bg-surface: #0c1220;
   --bg-surface-elevated: #131b2e;
-  --bg-glass: rgba(14, 21, 37, 0.85);
+  --bg-glass: rgba(14, 21, 37, 0.88);
   --border-subtle: rgba(255, 255, 255, 0.09);
   --border-active: rgba(255, 255, 255, 0.22);
   
@@ -20,13 +20,13 @@
   
   --color-ai: #6366f1;
   --color-ai-glow: rgba(99, 102, 241, 0.35);
-  --color-ai-bg: rgba(99, 102, 241, 0.12);
+  --color-ai-bg: rgba(99, 102, 241, 0.14);
   
   --color-breakthrough: #f59e0b;
-  --color-breakthrough-bg: rgba(245, 158, 11, 0.14);
+  --color-breakthrough-bg: rgba(245, 158, 11, 0.16);
   
   --color-frontier: #38bdf8;
-  --color-frontier-bg: rgba(56, 189, 248, 0.12);
+  --color-frontier-bg: rgba(56, 189, 248, 0.14);
 
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
@@ -59,9 +59,9 @@ html, body {
   inset: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.1) 0%, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(12, 18, 32, 0.95) 0%, transparent 100%);
+    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(10, 15, 26, 0.95) 0%, transparent 100%);
   z-index: 0;
 }
 
@@ -84,7 +84,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
-  background: rgba(10, 15, 26, 0.92);
+  background: rgba(10, 15, 26, 0.94);
   border-bottom: 1px solid var(--border-subtle);
   backdrop-filter: blur(16px);
   z-index: 20;
@@ -124,11 +124,11 @@ html, body {
   font-family: var(--font-mono);
 }
 
-/* Control Bar (Filters & Time Anchors) */
+/* Control Bar */
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .filter-pills {
@@ -186,12 +186,44 @@ html, body {
   font-family: var(--font-mono);
 }
 
+/* Mode Toggle: Pins vs Expanded */
+.view-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.mode-btn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.mode-btn:hover {
+  color: var(--text-primary);
+}
+
+.mode-btn.active {
+  background: var(--bg-surface-elevated);
+  color: #ffffff;
+}
+
 /* Quick Jump Time Bar */
 .time-anchors {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding-left: 12px;
+  padding-left: 10px;
   border-left: 1px solid var(--border-subtle);
 }
 
@@ -220,7 +252,7 @@ html, body {
   background: var(--color-project-bg);
 }
 
-/* Canvas Navigation & Hints */
+/* Canvas Navigation Arrows */
 .canvas-nav-actions {
   display: flex;
   align-items: center;
@@ -294,12 +326,12 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 4800px;
+  min-width: 5200px;
   height: 100%;
-  padding: 0 80px;
+  padding: 0 100px;
 }
 
-/* Swimlane Labels */
+/* Swimlane Indicators */
 .swimlane-indicators {
   position: fixed;
   left: 20px;
@@ -318,7 +350,7 @@ html, body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  background: rgba(12, 18, 32, 0.9);
+  background: rgba(12, 18, 32, 0.92);
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -334,7 +366,10 @@ html, body {
   border-color: rgba(56, 189, 248, 0.3);
 }
 
-/* TOP SWIMLANE: Projects */
+/* ==========================================================================
+   TOP SWIMLANE: Personal Projects
+   ========================================================================== */
+
 .swimlane-projects {
   position: relative;
   height: 250px;
@@ -342,39 +377,60 @@ html, body {
   margin-bottom: 0;
 }
 
-.swimlane-projects .milestone-item {
+.project-item {
   position: absolute;
   bottom: 0;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 200ms ease;
 }
 
-.swimlane-projects .milestone-card {
-  order: 1;
+.project-item:hover {
+  transform: translateX(-50%) translateY(-4px);
+  z-index: 30;
 }
 
-.swimlane-projects .milestone-stem {
-  order: 2;
+.project-card {
+  width: 340px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 21, 37, 0.96) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: all 200ms ease;
+}
+
+.project-item:hover .project-card {
+  border-color: var(--color-project);
+  box-shadow: 0 0 28px var(--color-project-glow), 0 12px 36px rgba(0, 0, 0, 0.8);
+}
+
+.project-stem-down {
   width: 2px;
-  height: 34px;
+  height: 32px;
   background: var(--color-project);
   box-shadow: 0 0 8px var(--color-project);
 }
 
-.swimlane-projects .stem-dot {
-  order: 3;
-  width: 8px;
-  height: 8px;
+.project-node-axis {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--color-project);
-  box-shadow: 0 0 8px var(--color-project);
-  margin-top: -4px;
+  box-shadow: 0 0 10px var(--color-project);
+  margin-top: -5px;
   z-index: 6;
 }
 
-/* CENTER AXIS: Chronological Time Ribbon */
+/* ==========================================================================
+   CENTER AXIS: Chronological Time Ribbon
+   ========================================================================== */
+
 .timeline-center-axis {
   position: relative;
   height: 32px;
@@ -433,7 +489,7 @@ html, body {
   color: var(--text-secondary);
   letter-spacing: 0.04em;
   background: var(--bg-deep);
-  padding: 1px 4px;
+  padding: 1px 5px;
   border-radius: 4px;
 }
 
@@ -442,7 +498,10 @@ html, body {
   font-weight: 900;
 }
 
-/* BOTTOM SWIMLANE: AI Frontier */
+/* ==========================================================================
+   BOTTOM SWIMLANE: AI Models (Collapsed Pins & Stems on TOP)
+   ========================================================================== */
+
 .swimlane-ai {
   position: relative;
   height: 250px;
@@ -450,17 +509,30 @@ html, body {
   margin-top: 0;
 }
 
-.swimlane-ai .milestone-item {
+/* AI Pin Node on Axis (Top of the item, touching the center line) */
+.ai-pin-item {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 180ms ease, opacity 180ms ease;
 }
 
-.swimlane-ai .stem-dot {
-  order: 1;
+.ai-pin-item.is-hidden {
+  display: none !important;
+}
+
+.ai-pin-item:hover {
+  z-index: 35;
+  transform: translateX(-50%) translateY(3px);
+}
+
+/* 1. Axis Connecting Dot (at very top) */
+.ai-axis-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -470,174 +542,126 @@ html, body {
   z-index: 6;
 }
 
-.swimlane-ai .milestone-stem {
-  order: 2;
+.ai-pin-item[data-type="breakthrough"] .ai-axis-dot {
+  background: var(--color-breakthrough);
+  box-shadow: 0 0 8px var(--color-breakthrough);
+}
+
+/* 2. Stem connecting down from axis into the pin */
+.ai-stem-down {
   width: 2px;
-  height: 34px;
-  background: #6366f1;
-  box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+  height: 32px;
+  background: linear-gradient(180deg, #6366f1 0%, rgba(99, 102, 241, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
 }
 
-.swimlane-ai .milestone-card {
-  order: 3;
+/* Staggered stems for even row distribution */
+.ai-pin-item.tier-2 .ai-stem-down {
+  height: 95px;
 }
 
-/* ==========================================================================
-   Milestone Cards
-   ========================================================================== */
-
-.milestone-item {
-  cursor: pointer;
-  transition: transform 200ms ease, opacity 200ms ease;
-  z-index: 10;
+.ai-pin-item[data-type="breakthrough"] .ai-stem-down {
+  background: linear-gradient(180deg, var(--color-breakthrough) 0%, rgba(245, 158, 11, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
 }
 
-.milestone-item.is-hidden {
-  display: none !important;
-}
-
-.milestone-item:hover {
-  z-index: 30;
-}
-
-.swimlane-projects .milestone-item:hover {
-  transform: translateX(-50%) translateY(-5px);
-}
-
-.swimlane-ai .milestone-item:hover {
-  transform: translateX(-50%) translateY(5px);
-}
-
-.milestone-card {
-  width: 290px;
-  padding: 14px 16px;
-  border-radius: 12px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-subtle);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-  transition: all 200ms ease;
-}
-
-.milestone-item:hover .milestone-card {
-  border-color: var(--border-active);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
-}
-
-/* Project Card Specific Styling */
-.milestone-item.is-project .milestone-card {
-  border-color: rgba(16, 185, 129, 0.4);
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(12, 18, 32, 0.96) 100%);
-  width: 330px;
-}
-
-.milestone-item.is-project:hover .milestone-card {
-  border-color: var(--color-project);
-  box-shadow: 0 0 28px var(--color-project-glow), 0 12px 36px rgba(0, 0, 0, 0.8);
-}
-
-/* Card Header */
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 7px;
-}
-
-.card-date {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 750;
-  color: var(--text-muted);
-}
-
-.card-badge {
+/* 3. The Collapsed Pin Pill */
+.ai-pin-pill {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 7px;
+  gap: 8px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.66rem;
+  background: var(--bg-glass);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  transition: all 180ms ease;
+}
+
+.ai-pin-item:hover .ai-pin-pill {
+  border-color: #38bdf8;
+  background: rgba(19, 27, 46, 0.98);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35), 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.ai-pin-item[data-type="breakthrough"] .ai-pin-pill {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.ai-pin-item[data-type="breakthrough"]:hover .ai-pin-pill {
+  border-color: var(--color-breakthrough);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.pin-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   font-weight: 800;
+  color: #94a3b8;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pin-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.pin-badge {
+  font-size: 0.64rem;
+  font-weight: 850;
+  padding: 1px 6px;
+  border-radius: 999px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-project {
-  background: var(--color-project-bg);
-  color: var(--color-project);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.badge-ai {
+  letter-spacing: 0.03em;
   background: var(--color-ai-bg);
   color: var(--color-frontier);
-  border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
-.badge-breakthrough {
+.pin-badge.badge-breakthrough {
   background: var(--color-breakthrough-bg);
   color: var(--color-breakthrough);
-  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
-/* Status indicator dot */
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-project);
-  box-shadow: 0 0 6px var(--color-project);
-  animation: pulse 2s infinite ease-in-out;
+/* 4. Hover Tooltip / Mini-Popover */
+.pin-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  width: 280px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #0d1322;
+  border: 1px solid var(--border-active);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: all 180ms ease;
+  z-index: 50;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.3); }
+.ai-pin-item:hover .pin-popover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
-/* Card Title & Content */
-.card-title {
-  font-size: 0.92rem;
-  font-weight: 800;
-  line-height: 1.3;
-  color: var(--text-primary);
-  margin-bottom: 5px;
-}
-
-.card-desc {
-  font-size: 0.78rem;
+.popover-desc {
+  font-size: 0.76rem;
   line-height: 1.45;
   color: var(--text-secondary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-/* Card Tags */
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.mini-tag {
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-}
-
-.inspect-cue {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 8px;
-  color: var(--color-project);
-  font-size: 0.72rem;
+.popover-hint {
+  font-size: 0.68rem;
   font-weight: 750;
+  color: var(--color-frontier);
+  display: block;
 }
 
 /* ==========================================================================
@@ -793,6 +817,95 @@ html, body {
   box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
 }
 
+/* Card Elements for Project Card */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.card-date {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 750;
+  color: var(--text-muted);
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-project {
+  background: var(--color-project-bg);
+  color: var(--color-project);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-project);
+  box-shadow: 0 0 6px var(--color-project);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+.card-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.mini-tag {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+}
+
+.inspect-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  color: var(--color-project);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
 /* Footer Info Strip */
 .timeline-footer {
   flex-shrink: 0;
@@ -834,12 +947,10 @@ html, body {
   .brand-text p {
     display: none;
   }
-  
   .time-anchors {
     display: none;
   }
-  
   .timeline-canvas {
-    min-width: 3800px;
+    min-width: 4200px;
   }
 }

@@ -3,7 +3,9 @@
 
   const viewport = document.getElementById("timeline-viewport");
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const milestoneItems = document.querySelectorAll(".milestone-item");
+  const projectItems = document.querySelectorAll(".project-item");
+  const aiItems = document.querySelectorAll(".ai-pin-item");
+  const allItems = document.querySelectorAll(".project-item, .ai-pin-item");
   const timeButtons = document.querySelectorAll(".time-btn");
   const btnScrollLeft = document.getElementById("btn-scroll-left");
   const btnScrollRight = document.getElementById("btn-scroll-right");
@@ -105,14 +107,10 @@
     const countAi = document.getElementById("count-ai");
     const countBreakthroughs = document.getElementById("count-breakthroughs");
 
-    let all = 0, projects = 0, ai = 0, breakthroughs = 0;
-
-    milestoneItems.forEach((item) => {
-      all++;
-      if (item.classList.contains("is-project")) projects++;
-      if (item.classList.contains("is-ai")) ai++;
-      if (item.dataset.type === "breakthrough") breakthroughs++;
-    });
+    let all = allItems.length;
+    let projects = projectItems.length;
+    let ai = aiItems.length;
+    let breakthroughs = document.querySelectorAll('[data-type="breakthrough"]').length;
 
     if (countAll) countAll.textContent = all;
     if (countProjects) countProjects.textContent = projects;
@@ -121,12 +119,16 @@
   }
 
   function applyFilter(filter) {
-    milestoneItems.forEach((item) => {
+    allItems.forEach((item) => {
       let match = false;
+      const isProject = item.classList.contains("project-item");
+      const isAi = item.classList.contains("ai-pin-item");
+      const isBreakthrough = item.dataset.type === "breakthrough";
+
       if (filter === "all") match = true;
-      else if (filter === "projects") match = item.classList.contains("is-project");
-      else if (filter === "ai") match = item.classList.contains("is-ai");
-      else if (filter === "breakthrough") match = item.dataset.type === "breakthrough";
+      else if (filter === "projects") match = isProject;
+      else if (filter === "ai") match = isAi;
+      else if (filter === "breakthrough") match = isBreakthrough;
 
       if (match) {
         item.classList.remove("is-hidden");
@@ -247,13 +249,13 @@
     inspectorDrawer.classList.remove("open");
   }
 
-  milestoneItems.forEach((item) => {
+  allItems.forEach((item) => {
     item.addEventListener("click", () => {
       const id = item.dataset.id;
-      const titleEl = item.querySelector(".card-title");
-      const descEl = item.querySelector(".card-desc");
-      const dateEl = item.querySelector(".card-date");
-      const badgeEl = item.querySelector(".card-badge");
+      const titleEl = item.querySelector(".card-title, .pin-title");
+      const descEl = item.querySelector(".card-desc, .popover-desc");
+      const dateEl = item.querySelector(".card-date, .pin-date");
+      const badgeEl = item.querySelector(".card-badge, .pin-badge");
 
       const fallbackData = {
         title: titleEl ? titleEl.textContent : "Milestone",
