@@ -6,7 +6,7 @@
   --bg-deep: #060910;
   --bg-surface: #0c1220;
   --bg-surface-elevated: #131b2e;
-  --bg-glass: rgba(14, 21, 37, 0.88);
+  --bg-glass: rgba(14, 21, 37, 0.9);
   --border-subtle: rgba(255, 255, 255, 0.09);
   --border-active: rgba(255, 255, 255, 0.22);
   
@@ -18,15 +18,23 @@
   --color-project-glow: rgba(16, 185, 129, 0.35);
   --color-project-bg: rgba(16, 185, 129, 0.12);
   
-  --color-ai: #6366f1;
-  --color-ai-glow: rgba(99, 102, 241, 0.35);
-  --color-ai-bg: rgba(99, 102, 241, 0.14);
+  --color-openai: #10b981;
+  --color-openai-bg: rgba(16, 185, 129, 0.14);
+  
+  --color-anthropic: #f97316;
+  --color-anthropic-bg: rgba(249, 115, 22, 0.14);
+  
+  --color-google: #38bdf8;
+  --color-google-bg: rgba(56, 189, 248, 0.14);
+  
+  --color-meta: #6366f1;
+  --color-meta-bg: rgba(99, 102, 241, 0.14);
+  
+  --color-deepseek: #a855f7;
+  --color-deepseek-bg: rgba(168, 85, 247, 0.14);
   
   --color-breakthrough: #f59e0b;
   --color-breakthrough-bg: rgba(245, 158, 11, 0.16);
-  
-  --color-frontier: #38bdf8;
-  --color-frontier-bg: rgba(56, 189, 248, 0.14);
 
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
@@ -84,7 +92,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
-  background: rgba(10, 15, 26, 0.94);
+  background: rgba(10, 15, 26, 0.95);
   border-bottom: 1px solid var(--border-subtle);
   backdrop-filter: blur(16px);
   z-index: 20;
@@ -142,12 +150,12 @@ html, body {
 }
 
 .filter-btn {
-  padding: 5px 12px;
+  padding: 5px 11px;
   border-radius: 999px;
   border: none;
   background: transparent;
   color: var(--text-secondary);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 150ms ease;
@@ -172,9 +180,19 @@ html, body {
   background: var(--color-project-bg);
 }
 
-.filter-btn.active.filter-ai {
-  color: var(--color-frontier);
-  background: var(--color-ai-bg);
+.filter-btn.active.filter-openai {
+  color: var(--color-openai);
+  background: var(--color-openai-bg);
+}
+
+.filter-btn.active.filter-anthropic {
+  color: var(--color-anthropic);
+  background: var(--color-anthropic-bg);
+}
+
+.filter-btn.active.filter-google {
+  color: var(--color-google);
+  background: var(--color-google-bg);
 }
 
 .badge-count {
@@ -184,38 +202,6 @@ html, body {
   background: rgba(255, 255, 255, 0.1);
   font-size: 0.66rem;
   font-family: var(--font-mono);
-}
-
-/* Mode Toggle: Pins vs Expanded */
-.view-mode-toggle {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-}
-
-.mode-btn {
-  padding: 5px 10px;
-  border-radius: 6px;
-  border: none;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 0.74rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 150ms ease;
-}
-
-.mode-btn:hover {
-  color: var(--text-primary);
-}
-
-.mode-btn.active {
-  background: var(--bg-surface-elevated);
-  color: #ffffff;
 }
 
 /* Quick Jump Time Bar */
@@ -228,7 +214,7 @@ html, body {
 }
 
 .time-btn {
-  padding: 4px 8px;
+  padding: 4px 7px;
   border-radius: 6px;
   border: 1px solid transparent;
   background: transparent;
@@ -326,7 +312,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 5200px;
+  min-width: 6200px;
   height: 100%;
   padding: 0 100px;
 }
@@ -362,7 +348,7 @@ html, body {
 }
 
 .lane-tag-ai {
-  color: var(--color-frontier);
+  color: var(--color-google);
   border-color: rgba(56, 189, 248, 0.3);
 }
 
@@ -499,17 +485,16 @@ html, body {
 }
 
 /* ==========================================================================
-   BOTTOM SWIMLANE: AI Models (Collapsed Pins & Stems on TOP)
+   BOTTOM SWIMLANE: AI Models (3-Tier Staggered Collapsed Pins)
    ========================================================================== */
 
 .swimlane-ai {
   position: relative;
-  height: 250px;
+  height: 280px;
   width: 100%;
   margin-top: 0;
 }
 
-/* AI Pin Node on Axis (Top of the item, touching the center line) */
 .ai-pin-item {
   position: absolute;
   top: 0;
@@ -527,11 +512,11 @@ html, body {
 }
 
 .ai-pin-item:hover {
-  z-index: 35;
+  z-index: 40;
   transform: translateX(-50%) translateY(3px);
 }
 
-/* 1. Axis Connecting Dot (at very top) */
+/* 1. Axis Connecting Dot (at very top on the center line) */
 .ai-axis-dot {
   width: 8px;
   height: 8px;
@@ -542,6 +527,31 @@ html, body {
   z-index: 6;
 }
 
+.ai-pin-item.source-openai .ai-axis-dot {
+  background: var(--color-openai);
+  box-shadow: 0 0 8px var(--color-openai);
+}
+
+.ai-pin-item.source-anthropic .ai-axis-dot {
+  background: var(--color-anthropic);
+  box-shadow: 0 0 8px var(--color-anthropic);
+}
+
+.ai-pin-item.source-google .ai-axis-dot {
+  background: var(--color-google);
+  box-shadow: 0 0 8px var(--color-google);
+}
+
+.ai-pin-item.source-meta .ai-axis-dot {
+  background: var(--color-meta);
+  box-shadow: 0 0 8px var(--color-meta);
+}
+
+.ai-pin-item.source-deepseek .ai-axis-dot {
+  background: var(--color-deepseek);
+  box-shadow: 0 0 8px var(--color-deepseek);
+}
+
 .ai-pin-item[data-type="breakthrough"] .ai-axis-dot {
   background: var(--color-breakthrough);
   box-shadow: 0 0 8px var(--color-breakthrough);
@@ -550,19 +560,47 @@ html, body {
 /* 2. Stem connecting down from axis into the pin */
 .ai-stem-down {
   width: 2px;
-  height: 32px;
+  height: 28px;
   background: linear-gradient(180deg, #6366f1 0%, rgba(99, 102, 241, 0.4) 100%);
   box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
 }
 
-/* Staggered stems for even row distribution */
-.ai-pin-item.tier-2 .ai-stem-down {
-  height: 95px;
+/* 3-Tier Staggering Heights */
+.ai-pin-item.tier-1 .ai-stem-down {
+  height: 28px;
 }
 
-.ai-pin-item[data-type="breakthrough"] .ai-stem-down {
-  background: linear-gradient(180deg, var(--color-breakthrough) 0%, rgba(245, 158, 11, 0.4) 100%);
-  box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
+.ai-pin-item.tier-2 .ai-stem-down {
+  height: 90px;
+}
+
+.ai-pin-item.tier-3 .ai-stem-down {
+  height: 155px;
+}
+
+.ai-pin-item.source-openai .ai-stem-down {
+  background: linear-gradient(180deg, var(--color-openai) 0%, rgba(16, 185, 129, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+.ai-pin-item.source-anthropic .ai-stem-down {
+  background: linear-gradient(180deg, var(--color-anthropic) 0%, rgba(249, 115, 22, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(249, 115, 22, 0.4);
+}
+
+.ai-pin-item.source-google .ai-stem-down {
+  background: linear-gradient(180deg, var(--color-google) 0%, rgba(56, 189, 248, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
+}
+
+.ai-pin-item.source-meta .ai-stem-down {
+  background: linear-gradient(180deg, var(--color-meta) 0%, rgba(99, 102, 241, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
+}
+
+.ai-pin-item.source-deepseek .ai-stem-down {
+  background: linear-gradient(180deg, var(--color-deepseek) 0%, rgba(168, 85, 247, 0.4) 100%);
+  box-shadow: 0 0 6px rgba(168, 85, 247, 0.4);
 }
 
 /* 3. The Collapsed Pin Pill */
@@ -573,7 +611,7 @@ html, body {
   padding: 6px 12px;
   border-radius: 999px;
   background: var(--bg-glass);
-  border: 1px solid rgba(99, 102, 241, 0.35);
+  border: 1px solid var(--border-subtle);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
@@ -581,18 +619,48 @@ html, body {
 }
 
 .ai-pin-item:hover .ai-pin-pill {
-  border-color: #38bdf8;
   background: rgba(19, 27, 46, 0.98);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35), 0 8px 24px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.7);
 }
 
-.ai-pin-item[data-type="breakthrough"] .ai-pin-pill {
-  border-color: rgba(245, 158, 11, 0.4);
+.ai-pin-item.source-openai .ai-pin-pill {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+.ai-pin-item.source-openai:hover .ai-pin-pill {
+  border-color: var(--color-openai);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
 }
 
-.ai-pin-item[data-type="breakthrough"]:hover .ai-pin-pill {
-  border-color: var(--color-breakthrough);
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 8px 24px rgba(0, 0, 0, 0.7);
+.ai-pin-item.source-anthropic .ai-pin-pill {
+  border-color: rgba(249, 115, 22, 0.35);
+}
+.ai-pin-item.source-anthropic:hover .ai-pin-pill {
+  border-color: var(--color-anthropic);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.35);
+}
+
+.ai-pin-item.source-google .ai-pin-pill {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+.ai-pin-item.source-google:hover .ai-pin-pill {
+  border-color: var(--color-google);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+.ai-pin-item.source-meta .ai-pin-pill {
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.ai-pin-item.source-meta:hover .ai-pin-pill {
+  border-color: var(--color-meta);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+}
+
+.ai-pin-item.source-deepseek .ai-pin-pill {
+  border-color: rgba(168, 85, 247, 0.35);
+}
+.ai-pin-item.source-deepseek:hover .ai-pin-pill {
+  border-color: var(--color-deepseek);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
 }
 
 .pin-date {
@@ -618,11 +686,34 @@ html, body {
   border-radius: 999px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  background: var(--color-ai-bg);
-  color: var(--color-frontier);
 }
 
-.pin-badge.badge-breakthrough {
+.badge-openai {
+  background: var(--color-openai-bg);
+  color: var(--color-openai);
+}
+
+.badge-anthropic {
+  background: var(--color-anthropic-bg);
+  color: var(--color-anthropic);
+}
+
+.badge-google {
+  background: var(--color-google-bg);
+  color: var(--color-google);
+}
+
+.badge-meta {
+  background: var(--color-meta-bg);
+  color: var(--color-meta);
+}
+
+.badge-deepseek {
+  background: var(--color-deepseek-bg);
+  color: var(--color-deepseek);
+}
+
+.badge-breakthrough {
   background: var(--color-breakthrough-bg);
   color: var(--color-breakthrough);
 }
@@ -631,12 +722,12 @@ html, body {
 .pin-popover {
   position: absolute;
   top: calc(100% + 8px);
-  width: 280px;
+  width: 290px;
   padding: 12px 14px;
   border-radius: 10px;
   background: #0d1322;
   border: 1px solid var(--border-active);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
   opacity: 0;
   pointer-events: none;
   transform: translateY(-4px);
@@ -660,7 +751,7 @@ html, body {
 .popover-hint {
   font-size: 0.68rem;
   font-weight: 750;
-  color: var(--color-frontier);
+  color: var(--color-google);
   display: block;
 }
 
@@ -951,6 +1042,6 @@ html, body {
     display: none;
   }
   .timeline-canvas {
-    min-width: 4200px;
+    min-width: 4800px;
   }
 }

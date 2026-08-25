@@ -1,4 +1,6 @@
-(function () {
+﻿import fs from "fs";
+
+const jsContent = `(function () {
   "use strict";
 
   const viewport = document.getElementById("timeline-viewport");
@@ -110,9 +112,9 @@
 
     let all = allItems.length;
     let projects = projectItems.length;
-    let openai = document.querySelectorAll(`[data-source="openai"]`).length;
-    let anthropic = document.querySelectorAll(`[data-source="anthropic"]`).length;
-    let google = document.querySelectorAll(`[data-source="google"]`).length;
+    let openai = document.querySelectorAll(\`[data-source="openai"]\`).length;
+    let anthropic = document.querySelectorAll(\`[data-source="anthropic"]\`).length;
+    let google = document.querySelectorAll(\`[data-source="google"]\`).length;
 
     if (countAll) countAll.textContent = all;
     if (countProjects) countProjects.textContent = projects;
@@ -159,7 +161,7 @@
       date: "August 2026",
       status: "Production v1.0.0",
       badge: "Algorithmic Trading & DevOps",
-      content: `
+      content: \`
         <div class="drawer-section">
           <span class="drawer-section-title">Executive Summary</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
@@ -217,14 +219,14 @@
             Open GitHub Repository &#8594;
           </a>
         </div>
-      `
+      \`
     },
     "claude-37": {
       title: "Anthropic Claude 3.7 Sonnet & Hybrid Thinking",
       date: "February 2025",
       status: "Frontier State of the Art",
       badge: "Hybrid Reasoning",
-      content: `
+      content: \`
         <div class="drawer-section">
           <span class="drawer-section-title">Model Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
@@ -242,35 +244,35 @@
             <p>Establishes new state-of-the-art across software engineering benchmarks, complex code refactoring, and multi-file code editing.</p>
           </div>
         </div>
-      `
+      \`
     },
     "o3-mini": {
       title: "OpenAI o3-mini (High-Compute Reasoning)",
       date: "January 2025",
       status: "Frontier Reasoning",
       badge: "STEM & Code Leader",
-      content: `
+      content: \`
         <div class="drawer-section">
           <span class="drawer-section-title">Model Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             <strong>o3-mini</strong> is OpenAI's cost-efficient, high-performance reasoning model designed for deep STEM, competitive programming, and structured tool calling with low latency and high reasoning effort settings.
           </p>
         </div>
-      `
+      \`
     },
     "gemini-2-pro": {
       title: "Google Gemini 2.0 Pro",
       date: "February 2025",
       status: "Frontier Multimodal",
       badge: "Google Frontier",
-      content: `
+      content: \`
         <div class="drawer-section">
           <span class="drawer-section-title">Model Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             <strong>Gemini 2.0 Pro</strong> delivers Google's strongest performance for complex coding and multi-step reasoning, alongside the experimental Flash-Thinking extended chain-of-thought branch.
           </p>
         </div>
-      `
+      \`
     }
   };
 
@@ -281,19 +283,19 @@
       drawerBody.innerHTML = data.content;
     } else if (fallbackData) {
       drawerTitle.textContent = fallbackData.title;
-      drawerBody.innerHTML = `
+      drawerBody.innerHTML = \`
         <div class="drawer-section">
           <span class="drawer-section-title">Milestone Overview</span>
-          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">${fallbackData.desc}</p>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">\${fallbackData.desc}</p>
         </div>
         <div class="drawer-section">
           <span class="drawer-section-title">Release Details</span>
           <div class="feature-box">
-            <strong>Date: ${fallbackData.date}</strong>
-            <p>${fallbackData.category}</p>
+            <strong>Date: \${fallbackData.date}</strong>
+            <p>\${fallbackData.category}</p>
           </div>
         </div>
-      `;
+      \`;
     }
 
     inspectorOverlay.classList.add("open");
@@ -348,3 +350,7 @@
     }
   });
 })();
+`;
+
+fs.writeFileSync("public/timeline.js", jsContent, "utf8");
+console.log("Successfully generated public/timeline.js!");
