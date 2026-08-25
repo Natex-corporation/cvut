@@ -182,21 +182,31 @@ const jsContent = `(function () {
             </div>
           </div>
         </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Tech Stack</span>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">C++ / C</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">AVR ATmega328P</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">PID Control</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Pololu 3pi</span>
-          </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/Line_Folower" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       \`
     },
 
-    // 2. Pre-GPT-3 Quant
+    // 2. Face Detection & Security
+    "face-detection-sec": {
+      title: "FaceDetection & Computer Vision Security (2020)",
+      date: "May 2020",
+      status: "Computer Vision Prototype",
+      badge: "Vision & Security",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Early exploration into client-side computer vision utilizing JavaScript FaceAPI neural models for real-time facial landmark detection paired with a secure web gateway prototype.
+          </p>
+        </div>
+      \`
+    },
+
+    // 3. Pre-GPT-3 Quant
     "pre-gpt3-quant": {
-      title: "Pre-GPT-3 Quantitative & Predictive ML Suite (2021)",
+      title: "Statistical ML & Risk Regression (2021)",
       date: "May 2021",
       status: "Machine Learning & Quant Research",
       badge: "Pre-Transformer AI",
@@ -204,69 +214,118 @@ const jsContent = `(function () {
         <div class="drawer-section">
           <span class="drawer-section-title">Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            A suite of early quantitative finance and machine learning models engineered prior to the mainstream transformer/LLM era, focusing on price direction forecasting, statistical arbitrage, and reinforcement learning.
+            Early quantitative finance foundations engineered prior to mainstream LLMs: linear regression price modeling, logistic regression risk scoring, and automated market data ingestion.
           </p>
         </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Core Subsystems</span>
-          <div class="feature-grid">
-            <div class="feature-box">
-              <strong>Time-Series LSTM &amp; Regression Models</strong>
-              <p>Multivariate recurrent neural networks predicting short-term equity direction using historical OHLCV features and technical indicators.</p>
-            </div>
-            <div class="feature-box">
-              <strong>Deep Q-Learning Market Agent</strong>
-              <p>Q-learning policy network trained in custom simulated market environments for risk-adjusted trade execution.</p>
-            </div>
-            <div class="feature-box">
-              <strong>Automated Data Scraping Engine</strong>
-              <p>High-throughput web scrapers collecting real-time ticker fundamentals and order book depth.</p>
-            </div>
-          </div>
-        </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Tech Stack</span>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Python</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">TensorFlow / Keras</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Scikit-Learn</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">NumPy / Pandas</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Deep Q-Learning</span>
-          </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Open Plutus Monorepo &#8594;</a>
         </div>
       \`
     },
 
-    // 3. Thomas The AI & PlutusApp
-    "plutus-thomas": {
-      title: "ThomasTheAI 2.0 & PlutusApp (2022)",
-      date: "November 2022",
-      status: "Algorithmic Trading",
-      badge: "Automated Trading",
+    // 4. Deep Q-Learning
+    "deep-q-learning": {
+      title: "Deep Q-Learning RL Market Agent (2021)",
+      date: "November 2021",
+      status: "Reinforcement Learning",
+      badge: "RL Trading Agent",
       content: \`
         <div class="drawer-section">
           <span class="drawer-section-title">Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            Evolution of automated trading systems combining quantitative risk management, automated order routing via Alpaca, Discord alerts, and backtesting simulation.
+            A Deep Q-Learning (DQN) policy network trained in a custom simulated market environment to learn risk-adjusted trade execution policies across historical price datasets.
           </p>
         </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Key Capabilities</span>
-          <div class="feature-grid">
-            <div class="feature-box">
-              <strong>Alpaca Broker Integration</strong>
-              <p>Direct REST &amp; WebSocket execution for paper and live market orders with automated position sizing.</p>
-            </div>
-            <div class="feature-box">
-              <strong>Real-Time Discord Operations Bot</strong>
-              <p>Automated notification bot streaming execution alerts, fill prices, and portfolio P&amp;L telemetry.</p>
-            </div>
-          </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Open Plutus Monorepo &#8594;</a>
         </div>
       \`
     },
 
-    // 4. Hack Austria
+    // 5. Discord Bot
+    "discord-bot-alerts": {
+      title: "Stock Activity Telemetry & Discord Bot (2022)",
+      date: "January 2022",
+      status: "Fintech Telemetry",
+      badge: "Real-Time Alerts",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Automated market monitoring and webhook notification service streaming real-time equity breakout alerts, volume spikes, and technical indicator triggers.
+          </p>
+        </div>
+      \`
+    },
+
+    // 6. Final Work Thesis
+    "final-work-thesis": {
+      title: "High School Graduation Capstone: ThomasTheAI (2022)",
+      date: "April 2022",
+      status: "Graduation Capstone Thesis",
+      badge: "C++ Neural Layers & LSTM",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Thesis Summary</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            High school graduation capstone research project (<em>Názler_AkciováAnalýza</em>) exploring neural network applications in financial time series forecasting, featuring custom C++ neural layers (<code>ThomasTheAI.cpp</code>) and multivariate Python LSTM networks.
+          </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect Thesis in Plutus Monorepo &#8594;</a>
+        </div>
+      \`
+    },
+
+    // 7. ThomasTheAI 2.0
+    "thomas-ai-2": {
+      title: "ThomasTheAI 2.0 & Desktop Trading App (2022)",
+      date: "December 2022",
+      status: "Desktop Trading Application",
+      badge: "Interactive GUI",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Desktop client unifying market charting, multi-timeframe feature scaling, technical indicator evaluation (RSI, Moving Averages), and directional trading signals.
+          </p>
+        </div>
+      \`
+    },
+
+    // 8. Ronik-App & RealTrade
+    "ronik-real-trade": {
+      title: "Ronik-App & RealTrade Execution Engine (2023)",
+      date: "February 2023",
+      status: "Broker Execution Harness",
+      badge: "Alpaca Trading",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Automated market execution harness connecting directly to Alpaca REST and WebSocket APIs for paper and live trading with bracket order support (Take-Profit &amp; Stop-Loss).
+          </p>
+        </div>
+      \`
+    },
+
+    // 9. Plutus Models Service
+    "plutus-models": {
+      title: "Plutus ML Inference Service & Models (2023)",
+      date: "May 2023",
+      status: "Machine Learning Microservice",
+      badge: "Model Serving",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Dedicated inference service and model registry repository delivering real-time neural network scoring and feature transformations for the Plutus trading platform.
+          </p>
+        </div>
+      \`
+    },
+
+    // 10. Hack Austria
     "hack-austria": {
       title: "HackAustria — Raiffeisen PSD2 Open Banking (2023)",
       date: "July 2023",
@@ -279,23 +338,29 @@ const jsContent = `(function () {
             Fintech application built for Hack Austria integrating Raiffeisen PSD2 Open Banking APIs to aggregate multi-bank transactions, estimate personal carbon emissions from categorized spending, and plan eco-friendly travel routes.
           </p>
         </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Features</span>
-          <div class="feature-grid">
-            <div class="feature-box">
-              <strong>PSD2 Multi-Bank Aggregation</strong>
-              <p>Seamless OAuth authorization and transaction synchronization across Austrian banking providers.</p>
-            </div>
-            <div class="feature-box">
-              <strong>Carbon Footprint Calculation</strong>
-              <p>Real-time CO2 emission conversion algorithms mapping merchant categories to sustainability scores.</p>
-            </div>
-          </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/HackAustria-Raiffeisenbank" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       \`
     },
 
-    // 5. Plastic Production
+    // 11. AAA Trading
+    "aaa-trading": {
+      title: "AAA Trading Live Execution Gateway (2023)",
+      date: "November 2023",
+      status: "Execution Gateway",
+      badge: "High-Throughput Trading",
+      content: \`
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            High-throughput order routing engine and execution gateway enforcing deterministic sizing and risk-bounded market integration.
+          </p>
+        </div>
+      \`
+    },
+
+    // 12. Plastic Production
     "plastic-production": {
       title: "RonikRecycle / Distributed Manufacturing OS (2024)",
       date: "March 2024",
@@ -308,23 +373,13 @@ const jsContent = `(function () {
             Hardware-software platform for recycled plastic filament extrusion, automated temperature PID regulation, filament quality sensing, and distributed print farm job coordination.
           </p>
         </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">System Modules</span>
-          <div class="feature-grid">
-            <div class="feature-box">
-              <strong>Extruder Thermal PID Controller</strong>
-              <p>Precise multi-zone temperature stabilization for melting recycled polymers (PET, PLA) into consistent 1.75mm filament.</p>
-            </div>
-            <div class="feature-box">
-              <strong>Distributed Print Order Dispatch</strong>
-              <p>Web platform coordinating customer job queues, print duration estimation, and material inventory tracking.</p>
-            </div>
-          </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/plastic_production_v2" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       \`
     },
 
-    // 6. Enerfis Testing Tools
+    // 13. Enerfis Testing Tools
     "enerfis-testing": {
       title: "Enerfis IoT Telemetry & QA Automation (2024)",
       date: "August 2024",
@@ -334,13 +389,16 @@ const jsContent = `(function () {
         <div class="drawer-section">
           <span class="drawer-section-title">Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            Automated quality assurance framework and spatial telemetry verification harness for building energy efficiency IoT sensor platforms and environmental monitoring hubs.
+            Automated quality assurance framework and spatial telemetry verification harness for building energy efficiency IoT sensor platforms.
           </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/enerfis_testing_tools" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       \`
     },
 
-    // 7. BoilerBattery (Safe, non-sensitive architectural overview)
+    // 14. BoilerBattery (Safe architecture)
     "boiler-battery": {
       title: "BoilerBattery — Smart Solar Energy Diverter (2025)",
       date: "April 2025",
@@ -353,33 +411,10 @@ const jsContent = `(function () {
             A decentralized IoT energy management system that monitors domestic photovoltaic battery state of charge (SoC) and dynamically diverts surplus solar power into water heater thermal storage buffers instead of curtailing or dumping power to the grid.
           </p>
         </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Core Subsystems</span>
-          <div class="feature-grid">
-            <div class="feature-box">
-              <strong>ESP32 Energy Gateway (Client/Server)</strong>
-              <p>Dual-node microcontroller firmware monitoring real-time power production, battery SoC thresholds, and temperature telemetry.</p>
-            </div>
-            <div class="feature-box">
-              <strong>Thermal Storage Buffer Management</strong>
-              <p>Proportional power modulation regulating boiler heating elements to absorb excess kilowatt-hours safely with automatic thermal cutoffs.</p>
-            </div>
-          </div>
-        </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Tech Stack</span>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">ESP32 Firmware</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">C++ / Arduino</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Python Server</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">IoT Protocols</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Clean Energy</span>
-          </div>
-        </div>
       \`
     },
 
-    // 8. CropCarbon
+    // 15. CropCarbon
     "crop-carbon": {
       title: "CropCarbon — Agricultural Telemetry Engine (2025)",
       date: "October 2025",
@@ -395,7 +430,7 @@ const jsContent = `(function () {
       \`
     },
 
-    // 9. RonikCloud & CloudR2
+    // 16. RonikCloud & CloudR2
     "ronik-cloud": {
       title: "RonikCloud & CloudR2 Hybrid Storage Platform (2025–2026)",
       date: "November 2025",
@@ -411,7 +446,7 @@ const jsContent = `(function () {
       \`
     },
 
-    // 10. OptiRadar
+    // 17. OptiRadar
     "opti-radar": {
       title: "OptiRadar / SkyWatch Computer Vision (2026)",
       date: "March 2026",
@@ -427,7 +462,7 @@ const jsContent = `(function () {
       \`
     },
 
-    // 11. RealEstate Scraper
+    // 18. RealEstate Scraper
     "realestate-scraper": {
       title: "RealEstate Intelligence & Scraper Engine (2026)",
       date: "April 2026",
@@ -443,7 +478,7 @@ const jsContent = `(function () {
       \`
     },
 
-    // 12. Insider Edge
+    // 19. Insider Edge
     "insider-edge": {
       title: "Insider Edge — SEC Form 4 Trading Bot (2026)",
       date: "August 2026",
@@ -456,56 +491,8 @@ const jsContent = `(function () {
             <strong>Insider Edge</strong> is an autonomous algorithmic trading service designed to track high-conviction SEC Form 4 insider transactions, run multi-tier risk evaluations, execute paper trades via Alpaca, and expose a real-time web operations control room.
           </p>
         </div>
-
-        <div class="drawer-section">
-          <span class="drawer-section-title">Core Architecture &amp; Pipeline</span>
-          <div class="feature-grid">
-            <div class="feature-box">
-              <strong>1. SEC Form 4 Scraping &amp; Ingestion</strong>
-              <p>Automated polling of EDGAR Form 4 XML filings with transaction categorization (P-Purchases vs S-Sales) and deduplication engine.</p>
-            </div>
-            <div class="feature-box">
-              <strong>2. Multi-Tier Risk Guardrails</strong>
-              <p>Strict max position caps ($2,000 per ticker), total portfolio leverage limits, cash reserve preservation, and duplicate entry blocking.</p>
-            </div>
-            <div class="feature-box">
-              <strong>3. Execution &amp; Exit Automation</strong>
-              <p>Deterministic order sizing, Alpaca paper trading API interop, and fill-based Take-Profit / Stop-Loss bracket management.</p>
-            </div>
-            <div class="feature-box">
-              <strong>4. Control Room &amp; Telemetry</strong>
-              <p>Embedded Starlette web dashboard with real-time portfolio metrics, active position monitor, and Prometheus exporter.</p>
-            </div>
-            <div class="feature-box">
-              <strong>5. ACID SQLite Engine</strong>
-              <p>WAL-mode SQLite state engine maintaining strict idempotency, executed trades history, open positions, and state recovery.</p>
-            </div>
-            <div class="feature-box">
-              <strong>6. Docker &amp; TrueNAS SCALE</strong>
-              <p>Hardened non-root container deployment, automated compose generation, and seamless headless NAS deployment.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="drawer-section">
-          <span class="drawer-section-title">Tech Stack &amp; Verification</span>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Python 3.11</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Alpaca API</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Starlette</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">SQLite ACID</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Docker Non-Root</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">TrueNAS SCALE</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Prometheus</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Pytest (96%+ Cov)</span>
-            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">GitHub Actions</span>
-          </div>
-        </div>
-
         <div class="drawer-actions">
-          <a href="https://github.com/Natex-corporation/insider-trading" target="_blank" rel="noopener noreferrer" class="btn-primary">
-            Open GitHub Repository &#8594;
-          </a>
+          <a href="https://github.com/Natex-corporation/insider-trading" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       \`
     },
@@ -646,4 +633,4 @@ const jsContent = `(function () {
 `;
 
 fs.writeFileSync("public/timeline.js", jsContent, "utf8");
-console.log("Successfully generated public/timeline.js with 12 Projects & Frontier AI models!");
+console.log("Successfully generated public/timeline.js with 19 Projects & Frontier AI models!");

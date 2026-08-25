@@ -17,7 +17,7 @@
     <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=2.4.0">
+    <link rel="stylesheet" href="./timeline.css?v=2.5.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -54,6 +54,7 @@
 
           <div class="time-anchors" aria-label="Jump to timeline anchor">
             <button class="time-btn" data-year="2020" type="button">2020</button>
+            <button class="time-btn" data-year="2021" type="button">2021</button>
             <button class="time-btn" data-year="2022" type="button">2022</button>
             <button class="time-btn" data-year="2023" type="button">2023</button>
             <button class="time-btn" data-year="2024" type="button">2024</button>
@@ -99,38 +100,128 @@
               </div>
             </article>
 
-            <!-- May 2021: Pre-GPT-3 Quantitative & Predictive ML -->
-            <article class="project-pin-item tier-2" data-id="pre-gpt3-quant" data-type="project" style="left: 850px;">
+            <!-- May 2020: Computer Vision & Biometric Gateway -->
+            <article class="project-pin-item tier-2" data-id="face-detection-sec" data-type="project" style="left: 420px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">May 2020</span>
+                <span class="pin-title">Computer Vision & Biometric Gateway</span>
+                <span class="project-badge">Vision & Security</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">Early JavaScript FaceAPI biometric detection and secured client gateway prototypes.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- May 2021: Statistical ML & Risk Regression -->
+            <article class="project-pin-item tier-1" data-id="pre-gpt3-quant" data-type="project" style="left: 780px;">
               <div class="project-pin-pill">
                 <span class="pin-date">May 2021</span>
-                <span class="pin-title">Pre-GPT-3 Quantitative & Predictive ML</span>
+                <span class="pin-title">Statistical ML & Risk Regression</span>
                 <span class="project-badge">Quantitative ML</span>
               </div>
               <div class="project-stem-down"></div>
               <div class="project-node-axis"></div>
               <div class="pin-popover popover-project">
-                <p class="popover-desc">Early machine learning models for market time-series prediction: Logistic Regression, LSTMs, and Q-learning.</p>
+                <p class="popover-desc">Linear regression and logistic regression risk scoring on historical equity price histories and OHLCV datasets.</p>
                 <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
               </div>
             </article>
 
-            <!-- Nov 2022: ThomasTheAI 2.0 & PlutusApp -->
-            <article class="project-pin-item tier-1" data-id="plutus-thomas" data-type="project" style="left: 1250px;">
+            <!-- Nov 2021: Deep Q-Learning RL Market Agent -->
+            <article class="project-pin-item tier-2" data-id="deep-q-learning" data-type="project" style="left: 980px;">
               <div class="project-pin-pill">
-                <span class="pin-date">Nov 2022</span>
-                <span class="pin-title">ThomasTheAI 2.0 & PlutusApp</span>
-                <span class="project-badge">Algorithmic Trading</span>
+                <span class="pin-date">Nov 2021</span>
+                <span class="pin-title">Deep Q-Learning RL Market Agent</span>
+                <span class="project-badge">Reinforcement Learning</span>
               </div>
               <div class="project-stem-down"></div>
               <div class="project-node-axis"></div>
               <div class="pin-popover popover-project">
-                <p class="popover-desc">Automated trading system with market simulation, LSTM price direction models, and Alpaca broker connectivity.</p>
+                <p class="popover-desc">Deep Q-learning policy agent trained inside custom simulated stock market environments for risk-adjusted trade execution.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- Jan 2022: Stock Activity Telemetry & Discord Bot -->
+            <article class="project-pin-item tier-1" data-id="discord-bot-alerts" data-type="project" style="left: 1120px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">Jan 2022</span>
+                <span class="pin-title">Stock Activity Telemetry & Discord Bot</span>
+                <span class="project-badge">Fintech Telemetry</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">Automated real-time Discord webhook service broadcasting breakout volume, trend triggers, and market movement alerts.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- Apr 2022: Final Thesis: ThomasTheAI (LSTM) -->
+            <article class="project-pin-item tier-2" data-id="final-work-thesis" data-type="project" style="left: 1260px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">Apr 2022</span>
+                <span class="pin-title">Final Thesis: ThomasTheAI (LSTM)</span>
+                <span class="project-badge">Graduation Thesis & LSTM</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">High school graduation thesis (Názler_AkciováAnalýza) combining custom C++ neural layers and Python LSTMs for directional market forecasting.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- Dec 2022: ThomasTheAI 2.0 & Desktop Trading App -->
+            <article class="project-pin-item tier-1" data-id="thomas-ai-2" data-type="project" style="left: 1540px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">Dec 2022</span>
+                <span class="pin-title">ThomasTheAI 2.0 & Desktop Trading App</span>
+                <span class="project-badge">Desktop Trading GUI</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">Desktop trading client integrating technical indicators (RSI, MA), multi-timeframe feature scalers, and interactive charts.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- Feb 2023: Ronik-App & RealTrade Execution Engine -->
+            <article class="project-pin-item tier-2" data-id="ronik-real-trade" data-type="project" style="left: 1720px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">Feb 2023</span>
+                <span class="pin-title">Ronik-App & RealTrade Execution Engine</span>
+                <span class="project-badge">Alpaca Market Execution</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">Automated live and paper trading order execution harness with Alpaca REST/WebSocket connectivity and bracket order management.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- May 2023: Plutus ML Inference Service & Models -->
+            <article class="project-pin-item tier-1" data-id="plutus-models" data-type="project" style="left: 1980px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">May 2023</span>
+                <span class="pin-title">Plutus ML Inference Service & Models</span>
+                <span class="project-badge">ML Model Serving</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">Dedicated microservice repository delivering real-time neural network inference and feature normalization for PlutusApp.</p>
                 <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
               </div>
             </article>
 
             <!-- Jul 2023: HackAustria — Raiffeisen PSD2 Banking -->
-            <article class="project-pin-item tier-2" data-id="hack-austria" data-type="project" style="left: 2100px;">
+            <article class="project-pin-item tier-2" data-id="hack-austria" data-type="project" style="left: 2160px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Jul 2023</span>
                 <span class="pin-title">HackAustria — Raiffeisen PSD2 Banking</span>
@@ -139,13 +230,28 @@
               <div class="project-stem-down"></div>
               <div class="project-node-axis"></div>
               <div class="pin-popover popover-project">
-                <p class="popover-desc">Raiffeisen PSD2 Open Banking aggregation platform with automated transaction carbon accounting and route planning.</p>
+                <p class="popover-desc">Raiffeisen PSD2 Open Banking aggregation platform with automated transaction carbon accounting and route optimization.</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>
+
+            <!-- Nov 2023: AAA Trading Live Execution Gateway -->
+            <article class="project-pin-item tier-1" data-id="aaa-trading" data-type="project" style="left: 2460px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">Nov 2023</span>
+                <span class="pin-title">AAA Trading Live Execution Gateway</span>
+                <span class="project-badge">High-Throughput Trading</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">Real-time execution gateway with deterministic order sizing and risk-bounded market integration.</p>
                 <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
               </div>
             </article>
 
             <!-- Mar 2024: RonikRecycle / Distributed Manufacturing OS -->
-            <article class="project-pin-item tier-1" data-id="plastic-production" data-type="project" style="left: 3000px;">
+            <article class="project-pin-item tier-2" data-id="plastic-production" data-type="project" style="left: 3000px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Mar 2024</span>
                 <span class="pin-title">RonikRecycle / Distributed Manufacturing OS</span>
@@ -160,7 +266,7 @@
             </article>
 
             <!-- Aug 2024: Enerfis IoT Telemetry & QA Automation -->
-            <article class="project-pin-item tier-2" data-id="enerfis-testing" data-type="project" style="left: 3900px;">
+            <article class="project-pin-item tier-1" data-id="enerfis-testing" data-type="project" style="left: 3900px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Aug 2024</span>
                 <span class="pin-title">Enerfis IoT Telemetry & QA Automation</span>
@@ -175,7 +281,7 @@
             </article>
 
             <!-- Apr 2025: BoilerBattery Smart Solar Energy Diverter -->
-            <article class="project-pin-item tier-1" data-id="boiler-battery" data-type="project" style="left: 4800px;">
+            <article class="project-pin-item tier-2" data-id="boiler-battery" data-type="project" style="left: 4800px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Apr 2025</span>
                 <span class="pin-title">BoilerBattery Smart Solar Energy Diverter</span>
@@ -190,7 +296,7 @@
             </article>
 
             <!-- Oct 2025: CropCarbon Agricultural Telemetry -->
-            <article class="project-pin-item tier-2" data-id="crop-carbon" data-type="project" style="left: 6000px;">
+            <article class="project-pin-item tier-1" data-id="crop-carbon" data-type="project" style="left: 6000px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Oct 2025</span>
                 <span class="pin-title">CropCarbon Agricultural Telemetry</span>
@@ -205,7 +311,7 @@
             </article>
 
             <!-- Nov 2025: RonikCloud & CloudR2 Storage Platform -->
-            <article class="project-pin-item tier-1" data-id="ronik-cloud" data-type="project" style="left: 6300px;">
+            <article class="project-pin-item tier-2" data-id="ronik-cloud" data-type="project" style="left: 6300px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Nov 2025</span>
                 <span class="pin-title">RonikCloud & CloudR2 Storage Platform</span>
@@ -220,7 +326,7 @@
             </article>
 
             <!-- Mar 2026: OptiRadar / SkyWatch Computer Vision -->
-            <article class="project-pin-item tier-2" data-id="opti-radar" data-type="project" style="left: 6850px;">
+            <article class="project-pin-item tier-1" data-id="opti-radar" data-type="project" style="left: 6850px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Mar 2026</span>
                 <span class="pin-title">OptiRadar / SkyWatch Computer Vision</span>
@@ -235,7 +341,7 @@
             </article>
 
             <!-- Apr 2026: RealEstate Intelligence & Scraper Engine -->
-            <article class="project-pin-item tier-1" data-id="realestate-scraper" data-type="project" style="left: 7100px;">
+            <article class="project-pin-item tier-2" data-id="realestate-scraper" data-type="project" style="left: 7100px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Apr 2026</span>
                 <span class="pin-title">RealEstate Intelligence & Scraper Engine</span>
@@ -250,7 +356,7 @@
             </article>
 
             <!-- Aug 2026: Insider Edge (v1.0.0) -->
-            <article class="project-pin-item tier-2" data-id="insider-edge" data-type="project" style="left: 7450px;">
+            <article class="project-pin-item tier-1" data-id="insider-edge" data-type="project" style="left: 7450px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Aug 2026</span>
                 <span class="pin-title">Insider Edge (v1.0.0)</span>
@@ -900,7 +1006,7 @@
       <!-- Footer Info Bar -->
       <footer class="timeline-footer">
         <div>
-          <span>Horizontal Chronological View (2020&ndash;2026) &bull; Dual Track Systems &amp; Frontier AI</span>
+          <span>Horizontal Chronological View (2020&ndash;2026) &bull; 19 Engineering Projects &bull; 27 AI Epochs</span>
         </div>
         <div class="footer-keys">
           <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
@@ -923,6 +1029,6 @@
       </div>
     </aside>
 
-    <script src="./timeline.js?v=2.4.0"></script>
+    <script src="./timeline.js?v=2.5.0"></script>
   </body>
 </html>

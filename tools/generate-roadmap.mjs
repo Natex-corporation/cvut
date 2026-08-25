@@ -1,6 +1,6 @@
 ﻿import fs from "fs";
 
-// 12 Personal Engineering Projects (Top Swimlane)
+// 19 Personal Engineering Projects (Top Swimlane)
 const projects = [
   {
     id: "line-follower-3pi",
@@ -13,34 +13,104 @@ const projects = [
     desc: "Autonomous optical line-following robot with custom AVR C++ PID reflectance sensor tracking and motor PWM control."
   },
   {
-    id: "pre-gpt3-quant",
-    date: "May 2021",
-    title: "Pre-GPT-3 Quantitative & Predictive ML",
+    id: "face-detection-sec",
+    date: "May 2020",
+    title: "Computer Vision & Biometric Gateway",
     type: "project",
-    pos: 850,
+    pos: 420,
     tier: 2,
-    badge: "Quantitative ML",
-    desc: "Early machine learning models for market time-series prediction: Logistic Regression, LSTMs, and Q-learning."
+    badge: "Vision & Security",
+    desc: "Early JavaScript FaceAPI biometric detection and secured client gateway prototypes."
   },
   {
-    id: "plutus-thomas",
-    date: "Nov 2022",
-    title: "ThomasTheAI 2.0 & PlutusApp",
+    id: "pre-gpt3-quant",
+    date: "May 2021",
+    title: "Statistical ML & Risk Regression",
     type: "project",
-    pos: 1250,
+    pos: 780,
     tier: 1,
-    badge: "Algorithmic Trading",
-    desc: "Automated trading system with market simulation, LSTM price direction models, and Alpaca broker connectivity."
+    badge: "Quantitative ML",
+    desc: "Linear regression and logistic regression risk scoring on historical equity price histories and OHLCV datasets."
+  },
+  {
+    id: "deep-q-learning",
+    date: "Nov 2021",
+    title: "Deep Q-Learning RL Market Agent",
+    type: "project",
+    pos: 980,
+    tier: 2,
+    badge: "Reinforcement Learning",
+    desc: "Deep Q-learning policy agent trained inside custom simulated stock market environments for risk-adjusted trade execution."
+  },
+  {
+    id: "discord-bot-alerts",
+    date: "Jan 2022",
+    title: "Stock Activity Telemetry & Discord Bot",
+    type: "project",
+    pos: 1120,
+    tier: 1,
+    badge: "Fintech Telemetry",
+    desc: "Automated real-time Discord webhook service broadcasting breakout volume, trend triggers, and market movement alerts."
+  },
+  {
+    id: "final-work-thesis",
+    date: "Apr 2022",
+    title: "Final Thesis: ThomasTheAI (LSTM)",
+    type: "project",
+    pos: 1260,
+    tier: 2,
+    badge: "Graduation Thesis & LSTM",
+    desc: "High school graduation thesis (Názler_AkciováAnalýza) combining custom C++ neural layers and Python LSTMs for directional market forecasting."
+  },
+  {
+    id: "thomas-ai-2",
+    date: "Dec 2022",
+    title: "ThomasTheAI 2.0 & Desktop Trading App",
+    type: "project",
+    pos: 1540,
+    tier: 1,
+    badge: "Desktop Trading GUI",
+    desc: "Desktop trading client integrating technical indicators (RSI, MA), multi-timeframe feature scalers, and interactive charts."
+  },
+  {
+    id: "ronik-real-trade",
+    date: "Feb 2023",
+    title: "Ronik-App & RealTrade Execution Engine",
+    type: "project",
+    pos: 1720,
+    tier: 2,
+    badge: "Alpaca Market Execution",
+    desc: "Automated live and paper trading order execution harness with Alpaca REST/WebSocket connectivity and bracket order management."
+  },
+  {
+    id: "plutus-models",
+    date: "May 2023",
+    title: "Plutus ML Inference Service & Models",
+    type: "project",
+    pos: 1980,
+    tier: 1,
+    badge: "ML Model Serving",
+    desc: "Dedicated microservice repository delivering real-time neural network inference and feature normalization for PlutusApp."
   },
   {
     id: "hack-austria",
     date: "Jul 2023",
     title: "HackAustria — Raiffeisen PSD2 Banking",
     type: "project",
-    pos: 2100,
+    pos: 2160,
     tier: 2,
     badge: "Fintech & Open Banking",
-    desc: "Raiffeisen PSD2 Open Banking aggregation platform with automated transaction carbon accounting and route planning."
+    desc: "Raiffeisen PSD2 Open Banking aggregation platform with automated transaction carbon accounting and route optimization."
+  },
+  {
+    id: "aaa-trading",
+    date: "Nov 2023",
+    title: "AAA Trading Live Execution Gateway",
+    type: "project",
+    pos: 2460,
+    tier: 1,
+    badge: "High-Throughput Trading",
+    desc: "Real-time execution gateway with deterministic order sizing and risk-bounded market integration."
   },
   {
     id: "plastic-production",
@@ -48,7 +118,7 @@ const projects = [
     title: "RonikRecycle / Distributed Manufacturing OS",
     type: "project",
     pos: 3000,
-    tier: 1,
+    tier: 2,
     badge: "Hardware & Production",
     desc: "Recycled plastic extrusion PID control, filament quality sensing, and distributed 3D print order coordination."
   },
@@ -58,7 +128,7 @@ const projects = [
     title: "Enerfis IoT Telemetry & QA Automation",
     type: "project",
     pos: 3900,
-    tier: 2,
+    tier: 1,
     badge: "IoT & QA Automation",
     desc: "Automated end-to-end testing harness and spatial telemetry verification for smart building energy sensors."
   },
@@ -68,7 +138,7 @@ const projects = [
     title: "BoilerBattery Smart Solar Energy Diverter",
     type: "project",
     pos: 4800,
-    tier: 1,
+    tier: 2,
     badge: "Smart Energy & IoT",
     desc: "Dual ESP32 IoT gateway dynamically routing surplus rooftop solar energy into domestic thermal storage buffers."
   },
@@ -78,7 +148,7 @@ const projects = [
     title: "CropCarbon Agricultural Telemetry",
     type: "project",
     pos: 6000,
-    tier: 2,
+    tier: 1,
     badge: "AgTech & Climate",
     desc: "Farm soil telemetry ingestion, carbon sequestration calculation algorithms, and sustainability incentive dashboards."
   },
@@ -88,7 +158,7 @@ const projects = [
     title: "RonikCloud & CloudR2 Storage Platform",
     type: "project",
     pos: 6300,
-    tier: 1,
+    tier: 2,
     badge: "Cloud Infrastructure",
     desc: "Hybrid cloud object storage platform powered by Cloudflare R2 edge workers, Firebase Auth, and Jenkins automation."
   },
@@ -98,7 +168,7 @@ const projects = [
     title: "OptiRadar / SkyWatch Computer Vision",
     type: "project",
     pos: 6850,
-    tier: 2,
+    tier: 1,
     badge: "Computer Vision",
     desc: "Real-time high-frame-rate optical object tracking, motion vector extraction, and skyward trajectory estimation."
   },
@@ -108,7 +178,7 @@ const projects = [
     title: "RealEstate Intelligence & Scraper Engine",
     type: "project",
     pos: 7100,
-    tier: 1,
+    tier: 2,
     badge: "Data Engineering",
     desc: "Multi-source real estate aggregation engine, geospatial deduplication, valuation modeling, and TrueNAS deployment."
   },
@@ -118,7 +188,7 @@ const projects = [
     title: "Insider Edge (v1.0.0)",
     type: "project",
     pos: 7450,
-    tier: 2,
+    tier: 1,
     badge: "Trading & DevOps",
     desc: "Automated SEC Form 4 insider trading bot with multi-tier risk guardrails, SQLite state engine, and Starlette control room."
   }
@@ -242,7 +312,7 @@ const html = `<!doctype html>
     <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=2.4.0">
+    <link rel="stylesheet" href="./timeline.css?v=2.5.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -279,6 +349,7 @@ const html = `<!doctype html>
 
           <div class="time-anchors" aria-label="Jump to timeline anchor">
             <button class="time-btn" data-year="2020" type="button">2020</button>
+            <button class="time-btn" data-year="2021" type="button">2021</button>
             <button class="time-btn" data-year="2022" type="button">2022</button>
             <button class="time-btn" data-year="2023" type="button">2023</button>
             <button class="time-btn" data-year="2024" type="button">2024</button>
@@ -362,7 +433,7 @@ ${aiHtml}
       <!-- Footer Info Bar -->
       <footer class="timeline-footer">
         <div>
-          <span>Horizontal Chronological View (2020&ndash;2026) &bull; Dual Track Systems &amp; Frontier AI</span>
+          <span>Horizontal Chronological View (2020&ndash;2026) &bull; 19 Engineering Projects &bull; 27 AI Epochs</span>
         </div>
         <div class="footer-keys">
           <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
@@ -385,10 +456,10 @@ ${aiHtml}
       </div>
     </aside>
 
-    <script src="./timeline.js?v=2.4.0"></script>
+    <script src="./timeline.js?v=2.5.0"></script>
   </body>
 </html>
 `;
 
 fs.writeFileSync("public/roadmap.html", html, "utf8");
-console.log("Successfully generated public/roadmap.html with 12 Projects & 27 AI Models!");
+console.log("Successfully generated public/roadmap.html with 19 Projects & 27 AI Models!");
