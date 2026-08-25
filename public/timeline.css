@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Standalone Horizontal Timeline & Engineering Trajectory UI System
    ========================================================================== */
 
@@ -353,17 +353,17 @@ html, body {
 }
 
 /* ==========================================================================
-   TOP SWIMLANE: Personal Projects
+   TOP SWIMLANE: Personal Projects (Staggered Pins)
    ========================================================================== */
 
 .swimlane-projects {
   position: relative;
-  height: 250px;
+  height: 260px;
   width: 100%;
   margin-bottom: 0;
 }
 
-.project-item {
+.project-pin-item {
   position: absolute;
   bottom: 0;
   transform: translateX(-50%);
@@ -372,45 +372,78 @@ html, body {
   align-items: center;
   cursor: pointer;
   z-index: 10;
-  transition: transform 200ms ease;
+  transition: transform 180ms ease, opacity 180ms ease;
 }
 
-.project-item:hover {
-  transform: translateX(-50%) translateY(-4px);
-  z-index: 30;
+.project-pin-item.is-hidden {
+  display: none !important;
 }
 
-.project-card {
-  width: 340px;
-  padding: 16px 18px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 21, 37, 0.96) 100%);
+.project-pin-item:hover {
+  z-index: 40;
+  transform: translateX(-50%) translateY(-3px);
+}
+
+.project-pin-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--bg-glass);
   border: 1px solid rgba(16, 185, 129, 0.4);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  transition: all 200ms ease;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  transition: all 180ms ease;
 }
 
-.project-item:hover .project-card {
+.project-pin-item:hover .project-pin-pill {
   border-color: var(--color-project);
-  box-shadow: 0 0 28px var(--color-project-glow), 0 12px 36px rgba(0, 0, 0, 0.8);
+  background: rgba(14, 28, 30, 0.98);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4), 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.project-badge {
+  font-size: 0.64rem;
+  font-weight: 850;
+  padding: 1px 6px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--color-project-bg);
+  color: var(--color-project);
 }
 
 .project-stem-down {
   width: 2px;
-  height: 32px;
-  background: var(--color-project);
-  box-shadow: 0 0 8px var(--color-project);
+  height: 28px;
+  background: linear-gradient(180deg, var(--color-project) 0%, rgba(16, 185, 129, 0.5) 100%);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+}
+
+.project-pin-item.tier-2 .project-stem-down {
+  height: 95px;
 }
 
 .project-node-axis {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--color-project);
-  box-shadow: 0 0 10px var(--color-project);
-  margin-top: -5px;
+  box-shadow: 0 0 8px var(--color-project);
+  margin-top: -4px;
   z-index: 6;
+}
+
+.popover-project {
+  bottom: calc(100% + 8px);
+  top: auto;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.project-hint {
+  color: var(--color-project);
 }
 
 /* ==========================================================================
@@ -516,7 +549,7 @@ html, body {
   transform: translateX(-50%) translateY(3px);
 }
 
-/* 1. Axis Connecting Dot (at very top on the center line) */
+/* 1. Axis Connecting Dot */
 .ai-axis-dot {
   width: 8px;
   height: 8px;
@@ -735,7 +768,8 @@ html, body {
   z-index: 50;
 }
 
-.ai-pin-item:hover .pin-popover {
+.ai-pin-item:hover .pin-popover,
+.project-pin-item:hover .pin-popover {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
@@ -908,75 +942,6 @@ html, body {
   box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
 }
 
-/* Card Elements for Project Card */
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 7px;
-}
-
-.card-date {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 750;
-  color: var(--text-muted);
-}
-
-.card-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 7px;
-  border-radius: 999px;
-  font-size: 0.66rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-project {
-  background: var(--color-project-bg);
-  color: var(--color-project);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-project);
-  box-shadow: 0 0 6px var(--color-project);
-  animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.3); }
-}
-
-.card-title {
-  font-size: 0.92rem;
-  font-weight: 800;
-  line-height: 1.3;
-  color: var(--text-primary);
-  margin-bottom: 5px;
-}
-
-.card-desc {
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
 .mini-tag {
   padding: 2px 6px;
   border-radius: 4px;
@@ -985,16 +950,6 @@ html, body {
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 0.66rem;
-}
-
-.inspect-cue {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 8px;
-  color: var(--color-project);
-  font-size: 0.72rem;
-  font-weight: 750;
 }
 
 /* Footer Info Strip */
@@ -1042,6 +997,6 @@ html, body {
     display: none;
   }
   .timeline-canvas {
-    min-width: 4800px;
+    min-width: 5200px;
   }
 }

@@ -3,9 +3,9 @@
 
   const viewport = document.getElementById("timeline-viewport");
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const projectItems = document.querySelectorAll(".project-item");
+  const projectItems = document.querySelectorAll(".project-pin-item");
   const aiItems = document.querySelectorAll(".ai-pin-item");
-  const allItems = document.querySelectorAll(".project-item, .ai-pin-item");
+  const allItems = document.querySelectorAll(".project-pin-item, .ai-pin-item");
   const timeButtons = document.querySelectorAll(".time-btn");
   const btnScrollLeft = document.getElementById("btn-scroll-left");
   const btnScrollRight = document.getElementById("btn-scroll-right");
@@ -124,7 +124,7 @@
   function applyFilter(filter) {
     allItems.forEach((item) => {
       let match = false;
-      const isProject = item.classList.contains("project-item");
+      const isProject = item.classList.contains("project-pin-item");
       const src = item.dataset.source;
 
       if (filter === "all") match = true;
@@ -152,10 +152,298 @@
     });
   });
 
-  // --- 6. Slide-Over Inspector Drawer Details ---
+  // --- 6. Deep Technical Inspector Content ---
   const PROJECT_DETAILS = {
+    // 1. Line Follower 3Pi
+    "line-follower-3pi": {
+      title: "Pololu 3Pi Autonomous Line Follower (2020)",
+      date: "February 2020",
+      status: "Hardware & Robotics",
+      badge: "Embedded AVR C++",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Autonomous high-speed differential-drive robotics platform built on the Pololu 3pi platform using custom Atmel AVR C++ with Proportional-Integral-Derivative (PID) line tracking.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Technical Architecture</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>PID Reflectance Sensor Calibration</strong>
+              <p>Dynamic 5-sensor infrared reflectance array auto-calibration normalizing ambient lighting shifts and track contrast.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Real-Time Motor PWM Loop</strong>
+              <p>Sub-millisecond loop frequency generating differential motor PWM speeds to navigate acute angles without losing track lock.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Tech Stack</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">C++ / C</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">AVR ATmega328P</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">PID Control</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Pololu 3pi</span>
+          </div>
+        </div>
+      `
+    },
+
+    // 2. Pre-GPT-3 Quant
+    "pre-gpt3-quant": {
+      title: "Pre-GPT-3 Quantitative & Predictive ML Suite (2021)",
+      date: "May 2021",
+      status: "Machine Learning & Quant Research",
+      badge: "Pre-Transformer AI",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            A suite of early quantitative finance and machine learning models engineered prior to the mainstream transformer/LLM era, focusing on price direction forecasting, statistical arbitrage, and reinforcement learning.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Core Subsystems</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>Time-Series LSTM &amp; Regression Models</strong>
+              <p>Multivariate recurrent neural networks predicting short-term equity direction using historical OHLCV features and technical indicators.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Deep Q-Learning Market Agent</strong>
+              <p>Q-learning policy network trained in custom simulated market environments for risk-adjusted trade execution.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Automated Data Scraping Engine</strong>
+              <p>High-throughput web scrapers collecting real-time ticker fundamentals and order book depth.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Tech Stack</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Python</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">TensorFlow / Keras</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Scikit-Learn</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">NumPy / Pandas</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Deep Q-Learning</span>
+          </div>
+        </div>
+      `
+    },
+
+    // 3. Thomas The AI & PlutusApp
+    "plutus-thomas": {
+      title: "ThomasTheAI 2.0 & PlutusApp (2022)",
+      date: "November 2022",
+      status: "Algorithmic Trading",
+      badge: "Automated Trading",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Evolution of automated trading systems combining quantitative risk management, automated order routing via Alpaca, Discord alerts, and backtesting simulation.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Key Capabilities</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>Alpaca Broker Integration</strong>
+              <p>Direct REST &amp; WebSocket execution for paper and live market orders with automated position sizing.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Real-Time Discord Operations Bot</strong>
+              <p>Automated notification bot streaming execution alerts, fill prices, and portfolio P&amp;L telemetry.</p>
+            </div>
+          </div>
+        </div>
+      `
+    },
+
+    // 4. Hack Austria
+    "hack-austria": {
+      title: "HackAustria — Raiffeisen PSD2 Open Banking (2023)",
+      date: "July 2023",
+      status: "Fintech Hackathon Winner",
+      badge: "PSD2 Open Banking",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Fintech application built for Hack Austria integrating Raiffeisen PSD2 Open Banking APIs to aggregate multi-bank transactions, estimate personal carbon emissions from categorized spending, and plan eco-friendly travel routes.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Features</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>PSD2 Multi-Bank Aggregation</strong>
+              <p>Seamless OAuth authorization and transaction synchronization across Austrian banking providers.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Carbon Footprint Calculation</strong>
+              <p>Real-time CO2 emission conversion algorithms mapping merchant categories to sustainability scores.</p>
+            </div>
+          </div>
+        </div>
+      `
+    },
+
+    // 5. Plastic Production
+    "plastic-production": {
+      title: "RonikRecycle / Distributed Manufacturing OS (2024)",
+      date: "March 2024",
+      status: "Hardware & Production Automation",
+      badge: "Distributed 3D Printing",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Hardware-software platform for recycled plastic filament extrusion, automated temperature PID regulation, filament quality sensing, and distributed print farm job coordination.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">System Modules</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>Extruder Thermal PID Controller</strong>
+              <p>Precise multi-zone temperature stabilization for melting recycled polymers (PET, PLA) into consistent 1.75mm filament.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Distributed Print Order Dispatch</strong>
+              <p>Web platform coordinating customer job queues, print duration estimation, and material inventory tracking.</p>
+            </div>
+          </div>
+        </div>
+      `
+    },
+
+    // 6. Enerfis Testing Tools
+    "enerfis-testing": {
+      title: "Enerfis IoT Telemetry & QA Automation (2024)",
+      date: "August 2024",
+      status: "IoT Testing & Automation",
+      badge: "QA Engineering",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Automated quality assurance framework and spatial telemetry verification harness for building energy efficiency IoT sensor platforms and environmental monitoring hubs.
+          </p>
+        </div>
+      `
+    },
+
+    // 7. BoilerBattery (Safe, non-sensitive architectural overview)
+    "boiler-battery": {
+      title: "BoilerBattery — Smart Solar Energy Diverter (2025)",
+      date: "April 2025",
+      status: "Smart Energy IoT System",
+      badge: "CleanTech & Microcontrollers",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Architectural Concept</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            A decentralized IoT energy management system that monitors domestic photovoltaic battery state of charge (SoC) and dynamically diverts surplus solar power into water heater thermal storage buffers instead of curtailing or dumping power to the grid.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Core Subsystems</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>ESP32 Energy Gateway (Client/Server)</strong>
+              <p>Dual-node microcontroller firmware monitoring real-time power production, battery SoC thresholds, and temperature telemetry.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Thermal Storage Buffer Management</strong>
+              <p>Proportional power modulation regulating boiler heating elements to absorb excess kilowatt-hours safely with automatic thermal cutoffs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Tech Stack</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">ESP32 Firmware</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">C++ / Arduino</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Python Server</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">IoT Protocols</span>
+            <span class="mini-tag" style="color:#10b981; border-color: rgba(16,185,129,0.3)">Clean Energy</span>
+          </div>
+        </div>
+      `
+    },
+
+    // 8. CropCarbon
+    "crop-carbon": {
+      title: "CropCarbon — Agricultural Telemetry Engine (2025)",
+      date: "October 2025",
+      status: "AgTech & Climate Platform",
+      badge: "Sustainability Telemetry",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Agricultural sustainability platform tracking soil telemetry, crop rotation patterns, and verifying carbon sequestration credits for agricultural landholders.
+          </p>
+        </div>
+      `
+    },
+
+    // 9. RonikCloud & CloudR2
+    "ronik-cloud": {
+      title: "RonikCloud & CloudR2 Hybrid Storage Platform (2025–2026)",
+      date: "November 2025",
+      status: "Cloud Infrastructure",
+      badge: "Cloudflare R2 & Firebase",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            High-performance distributed cloud storage system featuring zero-egress Cloudflare R2 object buckets, Firebase security rules, client-side encryption, and Jenkins continuous deployment.
+          </p>
+        </div>
+      `
+    },
+
+    // 10. OptiRadar
+    "opti-radar": {
+      title: "OptiRadar / SkyWatch Computer Vision (2026)",
+      date: "March 2026",
+      status: "Computer Vision & Edge AI",
+      badge: "Optical Object Tracking",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            High-frame-rate optical radar system designed for real-time moving object detection, background subtraction, skyward trajectory estimation, and automated camera video stream analysis.
+          </p>
+        </div>
+      `
+    },
+
+    // 11. RealEstate Scraper
+    "realestate-scraper": {
+      title: "RealEstate Intelligence & Scraper Engine (2026)",
+      date: "April 2026",
+      status: "Data Engineering Platform",
+      badge: "Real Estate Analytics",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Automated multi-source property intelligence platform scraping, cleaning, deduplicating, and pricing real estate listings across the Czech market with automated TrueNAS deployment.
+          </p>
+        </div>
+      `
+    },
+
+    // 12. Insider Edge
     "insider-edge": {
-      title: "Insider Edge — SEC Form 4 Trading Bot",
+      title: "Insider Edge — SEC Form 4 Trading Bot (2026)",
       date: "August 2026",
       status: "Production v1.0.0",
       badge: "Algorithmic Trading & DevOps",
@@ -219,6 +507,8 @@
         </div>
       `
     },
+
+    // AI Models
     "gpt-5": {
       title: "OpenAI GPT-5 (Orion Foundation)",
       date: "November 2025",
@@ -230,13 +520,6 @@
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             <strong>GPT-5</strong> represents OpenAI's breakthrough architectural unification: integrating test-time compute search, real-time multimodal sensory streaming, and autonomous multi-agent tool synthesis into a single foundation model.
           </p>
-        </div>
-        <div class="drawer-section">
-          <span class="drawer-section-title">Capabilities</span>
-          <div class="feature-box">
-            <strong>Deep Test-Time Search</strong>
-            <p>Adaptive compute allocation delivering human-expert level performance on STEM, complex law, and full-stack software refactors.</p>
-          </div>
         </div>
       `
     },
@@ -321,7 +604,7 @@
       const titleEl = item.querySelector(".card-title, .pin-title");
       const descEl = item.querySelector(".card-desc, .popover-desc");
       const dateEl = item.querySelector(".card-date, .pin-date");
-      const badgeEl = item.querySelector(".card-badge, .pin-badge");
+      const badgeEl = item.querySelector(".card-badge, .pin-badge, .project-badge");
 
       const fallbackData = {
         title: titleEl ? titleEl.textContent : "Milestone",

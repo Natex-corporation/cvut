@@ -1,5 +1,130 @@
 ﻿import fs from "fs";
 
+// 12 Personal Engineering Projects (Top Swimlane)
+const projects = [
+  {
+    id: "line-follower-3pi",
+    date: "Feb 2020",
+    title: "Pololu 3Pi Autonomous Line Follower",
+    type: "project",
+    pos: 280,
+    tier: 1,
+    badge: "Robotics & AVR C++",
+    desc: "Autonomous optical line-following robot with custom AVR C++ PID reflectance sensor tracking and motor PWM control."
+  },
+  {
+    id: "pre-gpt3-quant",
+    date: "May 2021",
+    title: "Pre-GPT-3 Quantitative & Predictive ML",
+    type: "project",
+    pos: 850,
+    tier: 2,
+    badge: "Quantitative ML",
+    desc: "Early machine learning models for market time-series prediction: Logistic Regression, LSTMs, and Q-learning."
+  },
+  {
+    id: "plutus-thomas",
+    date: "Nov 2022",
+    title: "ThomasTheAI 2.0 & PlutusApp",
+    type: "project",
+    pos: 1250,
+    tier: 1,
+    badge: "Algorithmic Trading",
+    desc: "Automated trading system with market simulation, LSTM price direction models, and Alpaca broker connectivity."
+  },
+  {
+    id: "hack-austria",
+    date: "Jul 2023",
+    title: "HackAustria — Raiffeisen PSD2 Banking",
+    type: "project",
+    pos: 2100,
+    tier: 2,
+    badge: "Fintech & Open Banking",
+    desc: "Raiffeisen PSD2 Open Banking aggregation platform with automated transaction carbon accounting and route planning."
+  },
+  {
+    id: "plastic-production",
+    date: "Mar 2024",
+    title: "RonikRecycle / Distributed Manufacturing OS",
+    type: "project",
+    pos: 3000,
+    tier: 1,
+    badge: "Hardware & Production",
+    desc: "Recycled plastic extrusion PID control, filament quality sensing, and distributed 3D print order coordination."
+  },
+  {
+    id: "enerfis-testing",
+    date: "Aug 2024",
+    title: "Enerfis IoT Telemetry & QA Automation",
+    type: "project",
+    pos: 3900,
+    tier: 2,
+    badge: "IoT & QA Automation",
+    desc: "Automated end-to-end testing harness and spatial telemetry verification for smart building energy sensors."
+  },
+  {
+    id: "boiler-battery",
+    date: "Apr 2025",
+    title: "BoilerBattery Smart Solar Energy Diverter",
+    type: "project",
+    pos: 4800,
+    tier: 1,
+    badge: "Smart Energy & IoT",
+    desc: "Dual ESP32 IoT gateway dynamically routing surplus rooftop solar energy into domestic thermal storage buffers."
+  },
+  {
+    id: "crop-carbon",
+    date: "Oct 2025",
+    title: "CropCarbon Agricultural Telemetry",
+    type: "project",
+    pos: 6000,
+    tier: 2,
+    badge: "AgTech & Climate",
+    desc: "Farm soil telemetry ingestion, carbon sequestration calculation algorithms, and sustainability incentive dashboards."
+  },
+  {
+    id: "ronik-cloud",
+    date: "Nov 2025",
+    title: "RonikCloud & CloudR2 Storage Platform",
+    type: "project",
+    pos: 6300,
+    tier: 1,
+    badge: "Cloud Infrastructure",
+    desc: "Hybrid cloud object storage platform powered by Cloudflare R2 edge workers, Firebase Auth, and Jenkins automation."
+  },
+  {
+    id: "opti-radar",
+    date: "Mar 2026",
+    title: "OptiRadar / SkyWatch Computer Vision",
+    type: "project",
+    pos: 6850,
+    tier: 2,
+    badge: "Computer Vision",
+    desc: "Real-time high-frame-rate optical object tracking, motion vector extraction, and skyward trajectory estimation."
+  },
+  {
+    id: "realestate-scraper",
+    date: "Apr 2026",
+    title: "RealEstate Intelligence & Scraper Engine",
+    type: "project",
+    pos: 7100,
+    tier: 1,
+    badge: "Data Engineering",
+    desc: "Multi-source real estate aggregation engine, geospatial deduplication, valuation modeling, and TrueNAS deployment."
+  },
+  {
+    id: "insider-edge",
+    date: "Aug 2026",
+    title: "Insider Edge (v1.0.0)",
+    type: "project",
+    pos: 7450,
+    tier: 2,
+    badge: "Trading & DevOps",
+    desc: "Automated SEC Form 4 insider trading bot with multi-tier risk guardrails, SQLite state engine, and Starlette control room."
+  }
+];
+
+// 27 Frontier AI Models (Bottom Swimlane)
 const models = [
   // --- 2020 ---
   { id: "gpt-3", date: "Jun 2020", title: "GPT-3 (175B)", source: "openai", type: "milestone", pos: 350, tier: 1, desc: "175B autoregressive LLM proving in-context few-shot prompting capabilities." },
@@ -64,7 +189,25 @@ const badgeLabel = (src) => {
   return "Frontier";
 };
 
-const itemsHtml = models.map(m => `
+// Generate Projects HTML (Top Swimlane)
+const projectsHtml = projects.map(p => `
+            <!-- ${p.date}: ${p.title} -->
+            <article class="project-pin-item tier-${p.tier}" data-id="${p.id}" data-type="project" style="left: ${p.pos}px;">
+              <div class="project-pin-pill">
+                <span class="pin-date">${p.date}</span>
+                <span class="pin-title">${p.title}</span>
+                <span class="project-badge">${p.badge}</span>
+              </div>
+              <div class="project-stem-down"></div>
+              <div class="project-node-axis"></div>
+              <div class="pin-popover popover-project">
+                <p class="popover-desc">${p.desc}</p>
+                <span class="popover-hint project-hint">Click to inspect architecture &rarr;</span>
+              </div>
+            </article>`).join("\n");
+
+// Generate AI Models HTML (Bottom Swimlane)
+const aiHtml = models.map(m => `
             <!-- ${m.date}: ${m.title} [${badgeLabel(m.source)}] -->
             <article class="ai-pin-item tier-${m.tier} source-${m.source}" data-id="${m.id}" data-source="${m.source}" data-type="${m.type}" style="left: ${m.pos}px;">
               <div class="ai-axis-dot"></div>
@@ -89,17 +232,17 @@ const html = `<!doctype html>
     <meta name="theme-color" content="#060910">
     <meta
       name="description"
-      content="Interactive horizontal engineering trajectory and AI model release timeline (2020–2026) showcasing Insider Edge, GPT-5, Sonnet 5, Mythos 5, Gemini 3.1 Pro, and frontier models."
+      content="Interactive horizontal engineering trajectory and AI model release timeline (2020–2026) showcasing personal engineering systems and frontier AI epochs."
     >
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engineering Roadmap">
-    <meta property="og:title" content="Engineering Trajectory & AI Horizon Timeline">
-    <meta property="og:description" content="Horizontal interactive timeline of software engineering projects and OpenAI, Anthropic, and Google AI model releases.">
+    <meta property="og:title" content="Engineering Trajectory & AI Horizon Timeline (2020–2026)">
+    <meta property="og:description" content="Interactive dual-swimlane chronological roadmap of software engineering systems and frontier AI model releases.">
     <meta property="og:url" content="https://cvut-crossroad.com/roadmap">
     <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=2.3.0">
+    <link rel="stylesheet" href="./timeline.css?v=2.4.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -111,7 +254,7 @@ const html = `<!doctype html>
           <div class="brand-badge">TX</div>
           <div class="brand-text">
             <h1>Engineering Trajectory &amp; AI Horizon</h1>
-            <p>2020–2026 Chronological Track &bull; GPT-5 &bull; Sonnet 5 &bull; Mythos 5 &bull; Gemini 3.1 Pro &bull; Projects</p>
+            <p>2020–2026 Chronological Track &bull; Shipped Projects &bull; Frontier AI Epochs</p>
           </div>
         </div>
 
@@ -156,40 +299,16 @@ const html = `<!doctype html>
         <div class="timeline-canvas">
 
           <!-- Swimlane Indicators -->
-          <div class="swimlane-indicators" style="top: 90px;">
-            <span class="lane-tag lane-tag-project">&bull; Engineering Projects</span>
+          <div class="swimlane-indicators" style="top: 85px;">
+            <span class="lane-tag lane-tag-project">&bull; Engineering Projects (Top Track)</span>
           </div>
-          <div class="swimlane-indicators" style="bottom: 60px;">
-            <span class="lane-tag lane-tag-ai">&bull; AI Frontier Horizon</span>
+          <div class="swimlane-indicators" style="bottom: 55px;">
+            <span class="lane-tag lane-tag-ai">&bull; Frontier AI Releases (Bottom Track)</span>
           </div>
 
-          <!-- TOP SWIMLANE: Personal Engineering Projects -->
+          <!-- TOP SWIMLANE: Personal Engineering Projects (Staggered Pins) -->
           <section class="swimlane-projects" aria-label="Engineering Projects">
-
-            <!-- 2026: Insider Edge -->
-            <article class="project-item" data-id="insider-edge" data-type="breakthrough" style="left: 7450px;">
-              <div class="project-card">
-                <div class="card-header">
-                  <span class="card-date">August 2026</span>
-                  <span class="card-badge badge-project"><span class="pulse-dot"></span> Completed (v1.0.0)</span>
-                </div>
-                <h3 class="card-title">Insider Edge &mdash; SEC Form 4 Bot</h3>
-                <p class="card-desc">
-                  Automated insider trading bot with multi-tier risk guardrails, SQLite state engine, Starlette telemetry room, and TrueNAS SCALE automation.
-                </p>
-                <div class="card-tags">
-                  <span class="mini-tag">Python 3.11</span>
-                  <span class="mini-tag">Alpaca API</span>
-                  <span class="mini-tag">SQLite</span>
-                  <span class="mini-tag">Docker</span>
-                  <span class="mini-tag">Prometheus</span>
-                </div>
-                <span class="inspect-cue">Inspect Architecture &rarr;</span>
-              </div>
-              <div class="project-stem-down"></div>
-              <div class="project-node-axis"></div>
-            </article>
-
+${projectsHtml}
           </section>
 
           <!-- CENTER AXIS: Chronological Time Ribbon -->
@@ -234,7 +353,7 @@ const html = `<!doctype html>
 
           <!-- BOTTOM SWIMLANE: AI Frontier Releases (3-Tier Staggered Collapsed Pins) -->
           <section class="swimlane-ai" aria-label="AI Frontier Releases">
-${itemsHtml}
+${aiHtml}
           </section>
 
         </div>
@@ -243,13 +362,13 @@ ${itemsHtml}
       <!-- Footer Info Bar -->
       <footer class="timeline-footer">
         <div>
-          <span>Horizontal Chronological View (2020&ndash;2026) &bull; Collapsed Interactive Pins</span>
+          <span>Horizontal Chronological View (2020&ndash;2026) &bull; Dual Track Systems &amp; Frontier AI</span>
         </div>
         <div class="footer-keys">
           <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
           <span class="key-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> scroll</span>
           <span class="key-hint"><kbd>Hover</kbd> for quick preview</span>
-          <span class="key-hint"><kbd>Click</kbd> pin to inspect</span>
+          <span class="key-hint"><kbd>Click</kbd> pin to inspect architecture</span>
         </div>
       </footer>
     </div>
@@ -266,10 +385,10 @@ ${itemsHtml}
       </div>
     </aside>
 
-    <script src="./timeline.js?v=2.3.0"></script>
+    <script src="./timeline.js?v=2.4.0"></script>
   </body>
 </html>
 `;
 
 fs.writeFileSync("public/roadmap.html", html, "utf8");
-console.log("Successfully generated public/roadmap.html with 39 models!");
+console.log("Successfully generated public/roadmap.html with 12 Projects & 27 AI Models!");
