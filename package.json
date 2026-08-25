@@ -8,6 +8,6 @@
     "check:links": "node tools/check-links.mjs",
     "configure-ads": "node tools/configure-ads.mjs",
     "preview": "npx wrangler pages dev public",
-    "deploy:cloudflare": "npx wrangler pages deploy public --project-name cvut-links"
+    "deploy:cloudflare": "npx wrangler pages deploy public --project-name cvut-links --branch cvut"
   }
 }
