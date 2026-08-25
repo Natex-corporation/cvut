@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Standalone Horizontal Timeline & Engineering Trajectory UI System
    ========================================================================== */
 
@@ -312,7 +312,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 6200px;
+  min-width: 7800px;
   height: 100%;
   padding: 0 100px;
 }

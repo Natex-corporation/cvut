@@ -152,7 +152,7 @@
     });
   });
 
-  // --- 6. Slide-Over Inspector Drawer ---
+  // --- 6. Slide-Over Inspector Drawer Details ---
   const PROJECT_DETAILS = {
     "insider-edge": {
       title: "Insider Edge — SEC Form 4 Trading Bot",
@@ -219,55 +219,65 @@
         </div>
       `
     },
-    "claude-37": {
-      title: "Anthropic Claude 3.7 Sonnet & Hybrid Thinking",
-      date: "February 2025",
-      status: "Frontier State of the Art",
-      badge: "Hybrid Reasoning",
+    "gpt-5": {
+      title: "OpenAI GPT-5 (Orion Foundation)",
+      date: "November 2025",
+      status: "Frontier Foundation",
+      badge: "Unified Reasoning & Omni",
       content: `
         <div class="drawer-section">
           <span class="drawer-section-title">Model Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>Claude 3.7 Sonnet</strong> is Anthropic's first hybrid reasoning foundation model, allowing developers to dynamically allocate test-time compute thinking tokens (from instant responses up to 64k tokens of deep chain-of-thought analysis).
+            <strong>GPT-5</strong> represents OpenAI's breakthrough architectural unification: integrating test-time compute search, real-time multimodal sensory streaming, and autonomous multi-agent tool synthesis into a single foundation model.
           </p>
         </div>
         <div class="drawer-section">
-          <span class="drawer-section-title">Key Architectural Milestones</span>
+          <span class="drawer-section-title">Capabilities</span>
           <div class="feature-box">
-            <strong>Hybrid Thinking Budget</strong>
-            <p>Users and API consumers can specify exact thinking limits per call, optimizing latency vs reasoning depth.</p>
-          </div>
-          <div class="feature-box">
-            <strong>SWE-bench Verified Leader</strong>
-            <p>Establishes new state-of-the-art across software engineering benchmarks, complex code refactoring, and multi-file code editing.</p>
+            <strong>Deep Test-Time Search</strong>
+            <p>Adaptive compute allocation delivering human-expert level performance on STEM, complex law, and full-stack software refactors.</p>
           </div>
         </div>
       `
     },
-    "o3-mini": {
-      title: "OpenAI o3-mini (High-Compute Reasoning)",
-      date: "January 2025",
-      status: "Frontier Reasoning",
-      badge: "STEM & Code Leader",
+    "sonnet-5": {
+      title: "Anthropic Claude Sonnet 5 & Opus 5",
+      date: "February 2026",
+      status: "Frontier 5th Generation",
+      badge: "Autonomous Architecture",
       content: `
         <div class="drawer-section">
           <span class="drawer-section-title">Model Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>o3-mini</strong> is OpenAI's cost-efficient, high-performance reasoning model designed for deep STEM, competitive programming, and structured tool calling with low latency and high reasoning effort settings.
+            <strong>Claude Sonnet 5</strong> is Anthropic's 5th-generation autonomous engineering model, featuring continuous background verification, sub-second latency, and verified SWE-bench leadership across multi-repo codebases.
           </p>
         </div>
       `
     },
-    "gemini-2-pro": {
-      title: "Google Gemini 2.0 Pro",
-      date: "February 2025",
-      status: "Frontier Multimodal",
-      badge: "Google Frontier",
+    "mythos-5": {
+      title: "Anthropic Mythos 5",
+      date: "March 2026",
+      status: "Frontier Autonomous Paradigm",
+      badge: "Cyber & Strategic Agent",
       content: `
         <div class="drawer-section">
           <span class="drawer-section-title">Model Overview</span>
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>Gemini 2.0 Pro</strong> delivers Google's strongest performance for complex coding and multi-step reasoning, alongside the experimental Flash-Thinking extended chain-of-thought branch.
+            <strong>Anthropic Mythos 5</strong> is Anthropic's dedicated autonomous paradigm model engineered for cyber security, formal theorem proving, and continuous multi-agent mission execution.
+          </p>
+        </div>
+      `
+    },
+    "gemini-31-pro": {
+      title: "Google Gemini 3.1 Pro & Ultra",
+      date: "June 2026",
+      status: "Google Flagship 2026",
+      badge: "World Modeling & Trillion Context",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Model Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            <strong>Gemini 3.1 Pro</strong> introduces Google's next-generation world modeling neural engine with trillion-token context retrieval, live interactive software environment simulation, and native self-verifying code generation.
           </p>
         </div>
       `
