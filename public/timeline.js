@@ -152,7 +152,7 @@
     });
   });
 
-  // --- 6. Deep Technical Inspector Content ---
+  // --- 6. Deep Technical Inspector Content (Every single project has working action buttons) ---
   const PROJECT_DETAILS = {
     // 1. Line Follower 3Pi
     "line-follower-3pi": {
@@ -199,6 +199,18 @@
             Early exploration into client-side computer vision utilizing JavaScript FaceAPI neural models for real-time facial landmark detection paired with a secure web gateway prototype.
           </p>
         </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Key Capabilities</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>Neural Landmark Tracking</strong>
+              <p>Browser-based neural net estimating 68 facial points for live user presence verification.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/FaceDetection" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
+        </div>
       `
     },
 
@@ -216,7 +228,7 @@
           </p>
         </div>
         <div class="drawer-actions">
-          <a href="https://github.com/Natex-corporation/PlutusApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Open Plutus Monorepo &#8594;</a>
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/01_early_ml_foundations" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect Early ML in Plutus Monorepo &#8594;</a>
         </div>
       `
     },
@@ -235,7 +247,7 @@
           </p>
         </div>
         <div class="drawer-actions">
-          <a href="https://github.com/Natex-corporation/PlutusApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Open Plutus Monorepo &#8594;</a>
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/01_early_ml_foundations" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect RL Agent in Plutus Monorepo &#8594;</a>
         </div>
       `
     },
@@ -252,6 +264,9 @@
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             Automated market monitoring and webhook notification service streaming real-time equity breakout alerts, volume spikes, and technical indicator triggers.
           </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/07_telemetry_discord_bot" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect Discord Bot in Plutus Monorepo &#8594;</a>
         </div>
       `
     },
@@ -302,7 +317,7 @@
           </p>
         </div>
         <div class="drawer-actions">
-          <a href="https://github.com/Natex-corporation/PlutusApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect Thesis in Plutus Monorepo &#8594;</a>
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/02_final_work_thesis" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect Thesis in Plutus Monorepo &#8594;</a>
         </div>
       `
     },
@@ -320,6 +335,9 @@
             Desktop client unifying market charting, multi-timeframe feature scaling, technical indicator evaluation (RSI, Moving Averages), and directional trading signals.
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/04_desktop_trading_apps" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect Trading GUI in Plutus Monorepo &#8594;</a>
+        </div>
       `
     },
 
@@ -336,6 +354,9 @@
             Automated market execution harness connecting directly to Alpaca REST and WebSocket APIs for paper and live trading with bracket order support (Take-Profit &amp; Stop-Loss).
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/05_real_trade_engines" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect RealTrade in Plutus Monorepo &#8594;</a>
+        </div>
       `
     },
 
@@ -351,6 +372,9 @@
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             Dedicated inference service and model registry repository delivering real-time neural network scoring and feature transformations for the Plutus trading platform.
           </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/06_ml_models_service" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect ML Models in Plutus Monorepo &#8594;</a>
         </div>
       `
     },
@@ -386,6 +410,9 @@
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             High-throughput order routing engine and execution gateway enforcing deterministic sizing and risk-bounded market integration.
           </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/PlutusApp/tree/main/05_real_trade_engines/aaa_trading" target="_blank" rel="noopener noreferrer" class="btn-primary">Inspect AAA Trading in Plutus Monorepo &#8594;</a>
         </div>
       `
     },
@@ -536,6 +563,9 @@
             <strong>GPT-5</strong> represents OpenAI's breakthrough architectural unification: integrating test-time compute search, real-time multimodal sensory streaming, and autonomous multi-agent tool synthesis into a single foundation model.
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://openai.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Official OpenAI Research &#8594;</a>
+        </div>
       `
     },
     "sonnet-5": {
@@ -549,6 +579,9 @@
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             <strong>Claude Sonnet 5</strong> is Anthropic's 5th-generation autonomous engineering model, featuring continuous background verification, sub-second latency, and verified SWE-bench leadership across multi-repo codebases.
           </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Official Anthropic Research &#8594;</a>
         </div>
       `
     },
@@ -564,6 +597,9 @@
             <strong>Anthropic Mythos 5</strong> is Anthropic's dedicated autonomous paradigm model engineered for cyber security, formal theorem proving, and continuous multi-agent mission execution.
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Official Anthropic Research &#8594;</a>
+        </div>
       `
     },
     "gemini-31-pro": {
@@ -577,6 +613,9 @@
           <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
             <strong>Gemini 3.1 Pro</strong> introduces Google's next-generation world modeling neural engine with trillion-token context retrieval, live interactive software environment simulation, and native self-verifying code generation.
           </p>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://blog.google/technology/ai/" target="_blank" rel="noopener noreferrer" class="btn-primary">Official Google DeepMind Research &#8594;</a>
         </div>
       `
     }

@@ -312,7 +312,7 @@ const html = `<!doctype html>
     <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=2.8.0">
+    <link rel="stylesheet" href="./timeline.css?v=2.9.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -321,6 +321,7 @@ const html = `<!doctype html>
       <!-- Header Bar -->
       <header class="timeline-header">
         <div class="brand-section">
+          <a href="./" class="nav-crossroad-btn" aria-label="Back to main hub">&larr; Back to Hub</a>
           <div class="brand-badge">TX</div>
           <div class="brand-text">
             <h1>Engineering Trajectory &amp; AI Horizon</h1>
@@ -456,10 +457,10 @@ ${aiHtml}
       </div>
     </aside>
 
-    <script src="./timeline.js?v=2.8.0"></script>
+    <script src="./timeline.js?v=2.9.0"></script>
   </body>
 </html>
 `;
 
 fs.writeFileSync("public/roadmap.html", html, "utf8");
-console.log("Successfully generated public/roadmap.html!");
+console.log("Successfully generated public/roadmap.html with Back to Hub button!");

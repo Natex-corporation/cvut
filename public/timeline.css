@@ -238,6 +238,28 @@ html, body {
   background: var(--color-project-bg);
 }
 
+.nav-crossroad-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+.nav-crossroad-btn:hover {
+  background: var(--bg-surface-elevated);
+  color: #ffffff;
+  border-color: var(--border-active);
+}
+
 /* Canvas Navigation Arrows */
 .canvas-nav-actions {
   display: flex;
