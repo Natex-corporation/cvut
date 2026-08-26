@@ -7,17 +7,17 @@
     <meta name="theme-color" content="#060910">
     <meta
       name="description"
-      content="Interactive horizontal engineering trajectory and AI model release timeline (2020–2026) showcasing personal engineering systems and frontier AI epochs."
+      content="Interactive horizontal engineering trajectory timeline (2020–2026) showcasing shipped software architectures, quantitative fintech systems, hardware IoT, and computer vision projects."
     >
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Engineering Roadmap">
-    <meta property="og:title" content="Engineering Trajectory & AI Horizon Timeline (2020–2026)">
-    <meta property="og:description" content="Interactive dual-swimlane chronological roadmap of software engineering systems and frontier AI model releases.">
+    <meta property="og:title" content="Engineering Trajectory Roadmap (2020–2026)">
+    <meta property="og:description" content="Chronological engineering milestones and open-source systems built from 2020 to 2026.">
     <meta property="og:url" content="https://cvut-crossroad.com/roadmap">
-    <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
+    <title>Engineering Trajectory Roadmap (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=3.0.0">
+    <link rel="stylesheet" href="./timeline.css?v=3.1.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -29,27 +29,24 @@
           <a href="./" class="nav-crossroad-btn" aria-label="Back to main hub">&larr; Back to Hub</a>
           <div class="brand-badge">TX</div>
           <div class="brand-text">
-            <h1>Engineering Trajectory &amp; AI Horizon</h1>
-            <p>2020–2026 Chronological Track &bull; Shipped Projects &bull; Frontier AI Epochs</p>
+            <h1>Engineering Trajectory Roadmap</h1>
+            <p>2020–2026 Chronological Track &bull; 19 Shipped Projects &amp; Systems</p>
           </div>
         </div>
 
         <div class="header-controls">
-          <nav class="filter-pills" aria-label="Milestone categories">
+          <nav class="filter-pills" aria-label="Project domains">
             <button class="filter-btn active" data-filter="all" type="button">
-              All <span class="badge-count" id="count-all">0</span>
+              All <span class="badge-count" id="count-all">19</span>
             </button>
-            <button class="filter-btn filter-projects" data-filter="projects" type="button">
-              Projects <span class="badge-count" id="count-projects">0</span>
+            <button class="filter-btn filter-fintech" data-filter="fintech" type="button">
+              Fintech &amp; Trading <span class="badge-count" id="count-fintech">0</span>
             </button>
-            <button class="filter-btn filter-openai" data-filter="openai" type="button">
-              OpenAI <span class="badge-count" id="count-openai">0</span>
+            <button class="filter-btn filter-hardware" data-filter="hardware" type="button">
+              Hardware &amp; IoT <span class="badge-count" id="count-hardware">0</span>
             </button>
-            <button class="filter-btn filter-anthropic" data-filter="anthropic" type="button">
-              Anthropic <span class="badge-count" id="count-anthropic">0</span>
-            </button>
-            <button class="filter-btn filter-google" data-filter="google" type="button">
-              Google <span class="badge-count" id="count-google">0</span>
+            <button class="filter-btn filter-vision" data-filter="ai-vision" type="button">
+              Vision &amp; Data <span class="badge-count" id="count-vision">0</span>
             </button>
           </nav>
 
@@ -72,22 +69,14 @@
       </header>
 
       <!-- Horizontal Timeline Viewport -->
-      <main class="timeline-viewport" id="timeline-viewport" tabindex="0" aria-label="Horizontal timeline canvas">
+      <main class="timeline-viewport" id="timeline-viewport" tabindex="0" aria-label="Horizontal engineering timeline canvas">
         <div class="timeline-canvas">
 
-          <!-- Swimlane Indicators -->
-          <div class="swimlane-indicators" style="top: 85px;">
-            <span class="lane-tag lane-tag-project">&bull; Engineering Projects (Top Track)</span>
-          </div>
-          <div class="swimlane-indicators" style="bottom: 55px;">
-            <span class="lane-tag lane-tag-ai">&bull; Frontier AI Releases (Bottom Track)</span>
-          </div>
-
-          <!-- TOP SWIMLANE: Personal Engineering Projects (4-Tier Staggered Pins) -->
+          <!-- Engineering Projects Track (4-Tier Staggered Pins) -->
           <section class="swimlane-projects" aria-label="Engineering Projects">
 
             <!-- Feb 2020: Pololu 3Pi Autonomous Line Follower -->
-            <article class="project-pin-item tier-1" data-id="line-follower-3pi" data-type="project" style="left: 400px;">
+            <article class="project-pin-item tier-1" data-id="line-follower-3pi" data-category="hardware" style="left: 400px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Feb 2020</span>
                 <span class="pin-title">Pololu 3Pi Autonomous Line Follower</span>
@@ -102,7 +91,7 @@
             </article>
 
             <!-- May 2020: Computer Vision & Biometric Gateway -->
-            <article class="project-pin-item tier-2" data-id="face-detection-sec" data-type="project" style="left: 900px;">
+            <article class="project-pin-item tier-2" data-id="face-detection-sec" data-category="ai-vision" style="left: 850px;">
               <div class="project-pin-pill">
                 <span class="pin-date">May 2020</span>
                 <span class="pin-title">Computer Vision & Biometric Gateway</span>
@@ -117,7 +106,7 @@
             </article>
 
             <!-- May 2021: Statistical ML & Risk Regression -->
-            <article class="project-pin-item tier-3" data-id="pre-gpt3-quant" data-type="project" style="left: 1700px;">
+            <article class="project-pin-item tier-3" data-id="pre-gpt3-quant" data-category="fintech" style="left: 1550px;">
               <div class="project-pin-pill">
                 <span class="pin-date">May 2021</span>
                 <span class="pin-title">Statistical ML & Risk Regression</span>
@@ -132,7 +121,7 @@
             </article>
 
             <!-- Nov 2021: Deep Q-Learning RL Market Agent -->
-            <article class="project-pin-item tier-4" data-id="deep-q-learning" data-type="project" style="left: 2250px;">
+            <article class="project-pin-item tier-4" data-id="deep-q-learning" data-category="fintech" style="left: 2100px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Nov 2021</span>
                 <span class="pin-title">Deep Q-Learning RL Market Agent</span>
@@ -147,7 +136,7 @@
             </article>
 
             <!-- Jan 2022: Stock Activity Telemetry & Discord Bot -->
-            <article class="project-pin-item tier-1" data-id="discord-bot-alerts" data-type="project" style="left: 2800px;">
+            <article class="project-pin-item tier-1" data-id="discord-bot-alerts" data-category="fintech" style="left: 2600px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Jan 2022</span>
                 <span class="pin-title">Stock Activity Telemetry & Discord Bot</span>
@@ -162,7 +151,7 @@
             </article>
 
             <!-- Feb 2022: Laser Challenge — M² Beam Quality Profiler -->
-            <article class="project-pin-item tier-2" data-id="laser-challenge-m2" data-type="project" style="left: 3100px;">
+            <article class="project-pin-item tier-2" data-id="laser-challenge-m2" data-category="hardware" style="left: 2950px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Feb 2022</span>
                 <span class="pin-title">Laser Challenge — M² Beam Quality Profiler</span>
@@ -177,7 +166,7 @@
             </article>
 
             <!-- Apr 2022: Final Thesis: ThomasTheAI (LSTM) -->
-            <article class="project-pin-item tier-3" data-id="final-work-thesis" data-type="project" style="left: 3450px;">
+            <article class="project-pin-item tier-3" data-id="final-work-thesis" data-category="fintech" style="left: 3300px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Apr 2022</span>
                 <span class="pin-title">Final Thesis: ThomasTheAI (LSTM)</span>
@@ -192,7 +181,7 @@
             </article>
 
             <!-- Dec 2022: ThomasTheAI 2.0 & Desktop Trading App -->
-            <article class="project-pin-item tier-4" data-id="thomas-ai-2" data-type="project" style="left: 4000px;">
+            <article class="project-pin-item tier-4" data-id="thomas-ai-2" data-category="fintech" style="left: 3800px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Dec 2022</span>
                 <span class="pin-title">ThomasTheAI 2.0 & Desktop Trading App</span>
@@ -207,7 +196,7 @@
             </article>
 
             <!-- Feb 2023: Ronik-App & RealTrade Execution Engine -->
-            <article class="project-pin-item tier-1" data-id="ronik-real-trade" data-type="project" style="left: 4600px;">
+            <article class="project-pin-item tier-1" data-id="ronik-real-trade" data-category="fintech" style="left: 4350px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Feb 2023</span>
                 <span class="pin-title">Ronik-App & RealTrade Execution Engine</span>
@@ -222,7 +211,7 @@
             </article>
 
             <!-- May 2023: Plutus ML Inference Service & Models -->
-            <article class="project-pin-item tier-2" data-id="plutus-models" data-type="project" style="left: 5200px;">
+            <article class="project-pin-item tier-2" data-id="plutus-models" data-category="fintech" style="left: 4900px;">
               <div class="project-pin-pill">
                 <span class="pin-date">May 2023</span>
                 <span class="pin-title">Plutus ML Inference Service & Models</span>
@@ -237,11 +226,11 @@
             </article>
 
             <!-- Jul 2023: HackAustria — Raiffeisen PSD2 Banking -->
-            <article class="project-pin-item tier-3" data-id="hack-austria" data-type="project" style="left: 5800px;">
+            <article class="project-pin-item tier-3" data-id="hack-austria" data-category="fintech" style="left: 5450px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Jul 2023</span>
                 <span class="pin-title">HackAustria — Raiffeisen PSD2 Banking</span>
-                <span class="project-badge">Fintech & Open Banking</span>
+                <span class="project-badge">PSD2 Open Banking</span>
               </div>
               <div class="project-stem-down"></div>
               <div class="project-node-axis"></div>
@@ -252,7 +241,7 @@
             </article>
 
             <!-- Nov 2023: AAA Trading Live Execution Gateway -->
-            <article class="project-pin-item tier-4" data-id="aaa-trading" data-type="project" style="left: 6400px;">
+            <article class="project-pin-item tier-4" data-id="aaa-trading" data-category="fintech" style="left: 6000px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Nov 2023</span>
                 <span class="pin-title">AAA Trading Live Execution Gateway</span>
@@ -267,7 +256,7 @@
             </article>
 
             <!-- Mar 2024: RonikRecycle / Distributed Manufacturing OS -->
-            <article class="project-pin-item tier-1" data-id="plastic-production" data-type="project" style="left: 7100px;">
+            <article class="project-pin-item tier-1" data-id="plastic-production" data-category="hardware" style="left: 6650px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Mar 2024</span>
                 <span class="pin-title">RonikRecycle / Distributed Manufacturing OS</span>
@@ -282,7 +271,7 @@
             </article>
 
             <!-- Aug 2024: Enerfis IoT Telemetry & QA Automation -->
-            <article class="project-pin-item tier-2" data-id="enerfis-testing" data-type="project" style="left: 7800px;">
+            <article class="project-pin-item tier-2" data-id="enerfis-testing" data-category="hardware" style="left: 7250px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Aug 2024</span>
                 <span class="pin-title">Enerfis IoT Telemetry & QA Automation</span>
@@ -297,7 +286,7 @@
             </article>
 
             <!-- Apr 2025: BoilerBattery Smart Solar Energy Diverter -->
-            <article class="project-pin-item tier-3" data-id="boiler-battery" data-type="project" style="left: 8600px;">
+            <article class="project-pin-item tier-3" data-id="boiler-battery" data-category="hardware" style="left: 7950px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Apr 2025</span>
                 <span class="pin-title">BoilerBattery Smart Solar Energy Diverter</span>
@@ -312,7 +301,7 @@
             </article>
 
             <!-- Oct 2025: CropCarbon Agricultural Telemetry -->
-            <article class="project-pin-item tier-4" data-id="crop-carbon" data-type="project" style="left: 9300px;">
+            <article class="project-pin-item tier-4" data-id="crop-carbon" data-category="ai-vision" style="left: 8600px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Oct 2025</span>
                 <span class="pin-title">CropCarbon Agricultural Telemetry</span>
@@ -327,7 +316,7 @@
             </article>
 
             <!-- Mar 2026: OptiRadar / SkyWatch Computer Vision -->
-            <article class="project-pin-item tier-1" data-id="opti-radar" data-type="project" style="left: 10000px;">
+            <article class="project-pin-item tier-1" data-id="opti-radar" data-category="ai-vision" style="left: 9200px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Mar 2026</span>
                 <span class="pin-title">OptiRadar / SkyWatch Computer Vision</span>
@@ -342,7 +331,7 @@
             </article>
 
             <!-- Apr 2026: RealEstate Intelligence & Scraper Engine -->
-            <article class="project-pin-item tier-2" data-id="realestate-scraper" data-type="project" style="left: 10600px;">
+            <article class="project-pin-item tier-2" data-id="realestate-scraper" data-category="ai-vision" style="left: 9750px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Apr 2026</span>
                 <span class="pin-title">RealEstate Intelligence & Scraper Engine</span>
@@ -357,7 +346,7 @@
             </article>
 
             <!-- Aug 2026: Insider Edge (v1.0.0) -->
-            <article class="project-pin-item tier-3" data-id="insider-edge" data-type="project" style="left: 11200px;">
+            <article class="project-pin-item tier-3" data-id="insider-edge" data-category="fintech" style="left: 10300px;">
               <div class="project-pin-pill">
                 <span class="pin-date">Aug 2026</span>
                 <span class="pin-title">Insider Edge (v1.0.0)</span>
@@ -372,7 +361,7 @@
             </article>
           </section>
 
-          <!-- CENTER AXIS: Chronological Time Ribbon -->
+          <!-- CENTER/BOTTOM AXIS: Chronological Time Ribbon -->
           <div class="timeline-center-axis" aria-hidden="true">
             <div class="axis-line"></div>
 
@@ -381,625 +370,36 @@
               <span class="axis-year-label">2020</span>
             </div>
 
-            <div class="axis-year-marker" id="year-2021" style="left: 1500px;">
+            <div class="axis-year-marker" id="year-2021" style="left: 1350px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2021</span>
             </div>
 
-            <div class="axis-year-marker" id="year-2022" style="left: 2700px;">
+            <div class="axis-year-marker" id="year-2022" style="left: 2500px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2022</span>
             </div>
 
-            <div class="axis-year-marker" id="year-2023" style="left: 4400px;">
+            <div class="axis-year-marker" id="year-2023" style="left: 4150px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2023</span>
             </div>
 
-            <div class="axis-year-marker" id="year-2024" style="left: 6800px;">
+            <div class="axis-year-marker" id="year-2024" style="left: 6450px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2024</span>
             </div>
 
-            <div class="axis-year-marker" id="year-2025" style="left: 8400px;">
+            <div class="axis-year-marker" id="year-2025" style="left: 7750px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2025</span>
             </div>
 
-            <div class="axis-year-marker is-current" id="year-2026" style="left: 10000px;">
+            <div class="axis-year-marker is-current" id="year-2026" style="left: 9000px;">
               <div class="axis-node"></div>
               <span class="axis-year-label">2026 (Now)</span>
             </div>
           </div>
-
-          <!-- BOTTOM SWIMLANE: AI Frontier Releases (4-Tier Staggered Collapsed Pins) -->
-          <section class="swimlane-ai" aria-label="AI Frontier Releases">
-
-            <!-- Jun 2020: GPT-3 (175B) [OpenAI] -->
-            <article class="ai-pin-item tier-1 source-openai" data-id="gpt-3" data-source="openai" data-type="milestone" style="left: 650px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jun 2020</span>
-                <span class="pin-title">GPT-3 (175B)</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">175B autoregressive LLM proving in-context few-shot prompting capabilities.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jan 2021: DALL-E 1 & CLIP [OpenAI] -->
-            <article class="ai-pin-item tier-2 source-openai" data-id="dalle-1" data-source="openai" data-type="milestone" style="left: 1950px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jan 2021</span>
-                <span class="pin-title">DALL-E 1 & CLIP</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Groundbreaking zero-shot multimodal image generation and text-image alignment.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Nov 2022: ChatGPT (GPT-3.5) [OpenAI] -->
-            <article class="ai-pin-item tier-1 source-openai" data-id="chatgpt" data-source="openai" data-type="breakthrough" style="left: 3650px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Nov 2022</span>
-                <span class="pin-title">ChatGPT (GPT-3.5)</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Conversational RLHF alignment catalyst sparking worldwide generative AI adoption.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Feb 2023: LLaMA 1 [Meta] -->
-            <article class="ai-pin-item tier-2 source-meta" data-id="llama-1" data-source="meta" data-type="milestone" style="left: 4350px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Feb 2023</span>
-                <span class="pin-title">LLaMA 1</span>
-                <span class="pin-badge badge-meta">Meta</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">7B-65B open research weights igniting the local LLM and quantization revolution.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Mar 2023: GPT-4 [OpenAI] -->
-            <article class="ai-pin-item tier-3 source-openai" data-id="gpt-4" data-source="openai" data-type="breakthrough" style="left: 4750px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Mar 2023</span>
-                <span class="pin-title">GPT-4</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Massive multimodal leap passing Uniform Bar Exam at 90th percentile.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Mar 2023: Claude 1 & Instant [Anthropic] -->
-            <article class="ai-pin-item tier-4 source-anthropic" data-id="claude-1" data-source="anthropic" data-type="milestone" style="left: 5000px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Mar 2023</span>
-                <span class="pin-title">Claude 1 & Instant</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Constitutional AI foundation providing safe, helpful, and honest conversational responses.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- May 2023: PaLM 2 (Bard) [Google] -->
-            <article class="ai-pin-item tier-1 source-google" data-id="palm-2" data-source="google" data-type="milestone" style="left: 5250px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">May 2023</span>
-                <span class="pin-title">PaLM 2 (Bard)</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Google's multilingual reasoning architecture powering the original Bard conversational engine.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jul 2023: Claude 2 (100k) [Anthropic] -->
-            <article class="ai-pin-item tier-2 source-anthropic" data-id="claude-2" data-source="anthropic" data-type="milestone" style="left: 5550px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jul 2023</span>
-                <span class="pin-title">Claude 2 (100k)</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Pioneering 100k token context window enabling full document analysis and synthesis.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jul 2023: Llama 2 [Meta] -->
-            <article class="ai-pin-item tier-3 source-meta" data-id="llama-2" data-source="meta" data-type="milestone" style="left: 5800px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jul 2023</span>
-                <span class="pin-title">Llama 2</span>
-                <span class="pin-badge badge-meta">Meta</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Free commercial open-source license model enabling widespread enterprise deployment.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Nov 2023: GPT-4 Turbo [OpenAI] -->
-            <article class="ai-pin-item tier-4 source-openai" data-id="gpt-4-turbo" data-source="openai" data-type="milestone" style="left: 6200px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Nov 2023</span>
-                <span class="pin-title">GPT-4 Turbo</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">128k context window, JSON mode, and GPT-4V multimodal vision capabilities.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Dec 2023: Gemini 1.0 (Ultra/Pro) [Google] -->
-            <article class="ai-pin-item tier-1 source-google" data-id="gemini-1" data-source="google" data-type="milestone" style="left: 6550px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Dec 2023</span>
-                <span class="pin-title">Gemini 1.0 (Ultra/Pro)</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Google's native multimodal model trained from ground up across text, code, audio, and video.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Feb 2024: Gemini 1.5 Pro (2M) [Google] -->
-            <article class="ai-pin-item tier-2 source-google" data-id="gemini-15-pro" data-source="google" data-type="breakthrough" style="left: 6850px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Feb 2024</span>
-                <span class="pin-title">Gemini 1.5 Pro (2M)</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Breakthrough 1M-2M context window with 99%+ needle-in-a-haystack retrieval across whole codebases.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Mar 2024: Claude 3 (Opus/Sonnet) [Anthropic] -->
-            <article class="ai-pin-item tier-3 source-anthropic" data-id="claude-3" data-source="anthropic" data-type="milestone" style="left: 7100px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Mar 2024</span>
-                <span class="pin-title">Claude 3 (Opus/Sonnet)</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Opus captures #1 spot on Chatbot Arena; Sonnet offers balanced high-throughput intelligence.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Apr 2024: Llama 3 (8B/70B) [Meta] -->
-            <article class="ai-pin-item tier-4 source-meta" data-id="llama-3" data-source="meta" data-type="milestone" style="left: 7300px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Apr 2024</span>
-                <span class="pin-title">Llama 3 (8B/70B)</span>
-                <span class="pin-badge badge-meta">Meta</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">15T+ training tokens with 128k tokenizer, setting high-water mark for open weights.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- May 2024: GPT-4o (Omni) [OpenAI] -->
-            <article class="ai-pin-item tier-1 source-openai" data-id="gpt-4o" data-source="openai" data-type="breakthrough" style="left: 7500px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">May 2024</span>
-                <span class="pin-title">GPT-4o (Omni)</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Single neural network natively handling text, vision, and real-time audio conversations.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- May 2024: Gemini 1.5 Flash [Google] -->
-            <article class="ai-pin-item tier-2 source-google" data-id="gemini-15-flash" data-source="google" data-type="milestone" style="left: 7680px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">May 2024</span>
-                <span class="pin-title">Gemini 1.5 Flash</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Ultra-fast, low-latency 1M context model optimized for high-volume multimodal pipelines.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jun 2024: Claude 3.5 Sonnet [Anthropic] -->
-            <article class="ai-pin-item tier-3 source-anthropic" data-id="claude-35" data-source="anthropic" data-type="breakthrough" style="left: 7860px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jun 2024</span>
-                <span class="pin-title">Claude 3.5 Sonnet</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Landmark coding and agentic reasoning model; introduced Artifacts interactive workspace.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jul 2024: GPT-4o mini [OpenAI] -->
-            <article class="ai-pin-item tier-4 source-openai" data-id="gpt-4o-mini" data-source="openai" data-type="milestone" style="left: 8040px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jul 2024</span>
-                <span class="pin-title">GPT-4o mini</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Cost-efficient small model outperforming GPT-3.5 with 128k context and vision support.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jul 2024: Llama 3.1 (405B) [Meta] -->
-            <article class="ai-pin-item tier-1 source-meta" data-id="llama-31" data-source="meta" data-type="milestone" style="left: 8220px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jul 2024</span>
-                <span class="pin-title">Llama 3.1 (405B)</span>
-                <span class="pin-badge badge-meta">Meta</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Flagship 405B open-weights model rivaling top proprietary foundation models with 128k context.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Sep 2024: OpenAI o1-preview [OpenAI] -->
-            <article class="ai-pin-item tier-2 source-openai" data-id="o1-preview" data-source="openai" data-type="breakthrough" style="left: 8400px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Sep 2024</span>
-                <span class="pin-title">OpenAI o1-preview</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Test-time compute reasoning paradigm shift with internal chain-of-thought exploration.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Oct 2024: Claude 3.5 & Computer Use [Anthropic] -->
-            <article class="ai-pin-item tier-3 source-anthropic" data-id="claude-35-haiku" data-source="anthropic" data-type="milestone" style="left: 8580px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Oct 2024</span>
-                <span class="pin-title">Claude 3.5 & Computer Use</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Pioneered API capability for AI agents to control desktop mouse, keyboard, and screen.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Dec 2024: Gemini 2.0 Flash [Google] -->
-            <article class="ai-pin-item tier-4 source-google" data-id="gemini-2-flash" data-source="google" data-type="milestone" style="left: 8760px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Dec 2024</span>
-                <span class="pin-title">Gemini 2.0 Flash</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Agentic multimodal streaming architecture with real-time video/audio and tool execution.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Dec 2024: OpenAI o1 Full [OpenAI] -->
-            <article class="ai-pin-item tier-1 source-openai" data-id="o1-full" data-source="openai" data-type="milestone" style="left: 8940px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Dec 2024</span>
-                <span class="pin-title">OpenAI o1 Full</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Production o1 with vision multimodal inputs, structured outputs, and reduced hallucination rate.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jan 2025: DeepSeek R1 & V3 [DeepSeek] -->
-            <article class="ai-pin-item tier-2 source-deepseek" data-id="deepseek" data-source="deepseek" data-type="breakthrough" style="left: 9100px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jan 2025</span>
-                <span class="pin-title">DeepSeek R1 & V3</span>
-                <span class="pin-badge badge-deepseek">DeepSeek</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Pure RL reasoning model & 671B MLA MoE architecture delivering frontier performance at high efficiency.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jan 2025: OpenAI o3-mini [OpenAI] -->
-            <article class="ai-pin-item tier-3 source-openai" data-id="o3-mini" data-source="openai" data-type="breakthrough" style="left: 9280px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jan 2025</span>
-                <span class="pin-title">OpenAI o3-mini</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">High-compute small reasoning model topping competitive coding and STEM benchmarks.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Feb 2025: Claude 3.7 Sonnet [Anthropic] -->
-            <article class="ai-pin-item tier-4 source-anthropic" data-id="claude-37" data-source="anthropic" data-type="breakthrough" style="left: 9460px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Feb 2025</span>
-                <span class="pin-title">Claude 3.7 Sonnet</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">First hybrid thinking model with user-controllable reasoning budget; leader in SWE-bench Verified.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Feb 2025: Gemini 2.0 Pro [Google] -->
-            <article class="ai-pin-item tier-1 source-google" data-id="gemini-2-pro" data-source="google" data-type="milestone" style="left: 9640px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Feb 2025</span>
-                <span class="pin-title">Gemini 2.0 Pro</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Google's premier coding and complex reasoning model with Flash-Thinking experimental branch.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- May 2025: Gemini 2.5 Pro & Ultra [Google] -->
-            <article class="ai-pin-item tier-2 source-google" data-id="gemini-25" data-source="google" data-type="milestone" style="left: 9820px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">May 2025</span>
-                <span class="pin-title">Gemini 2.5 Pro & Ultra</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Natively integrated deep reasoning across multimodal audio, vision, and dynamic execution sandboxes.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jun 2025: Claude 4 & Opus 4 [Anthropic] -->
-            <article class="ai-pin-item tier-3 source-anthropic" data-id="claude-4" data-source="anthropic" data-type="breakthrough" style="left: 10000px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jun 2025</span>
-                <span class="pin-title">Claude 4 & Opus 4</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Next-generation Constitutional reasoning engine with multi-hour autonomous task orchestration.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Aug 2025: OpenAI o3 Full [OpenAI] -->
-            <article class="ai-pin-item tier-4 source-openai" data-id="o3-full" data-source="openai" data-type="breakthrough" style="left: 10180px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Aug 2025</span>
-                <span class="pin-title">OpenAI o3 Full</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Flagship frontier test-time reasoning model scaling compute across Olympiad math and complex engineering.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Oct 2025: Claude 4.5 Sonnet [Anthropic] -->
-            <article class="ai-pin-item tier-1 source-anthropic" data-id="claude-45" data-source="anthropic" data-type="milestone" style="left: 10360px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Oct 2025</span>
-                <span class="pin-title">Claude 4.5 Sonnet</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Ultra-fast autonomous code refactoring and advanced multi-agent desktop interaction protocols.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Nov 2025: GPT-5 (Orion) [OpenAI] -->
-            <article class="ai-pin-item tier-2 source-openai" data-id="gpt-5" data-source="openai" data-type="breakthrough" style="left: 10540px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Nov 2025</span>
-                <span class="pin-title">GPT-5 (Orion)</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Unified frontier foundation model merging native multimodal perception with deep test-time compute.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Dec 2025: Gemini 3.0 Pro [Google] -->
-            <article class="ai-pin-item tier-3 source-google" data-id="gemini-30" data-source="google" data-type="breakthrough" style="left: 10720px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Dec 2025</span>
-                <span class="pin-title">Gemini 3.0 Pro</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Universal agent foundation with continuous execution loops, memory persistence, and deep codebase graphs.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jan 2026: DeepSeek R2 & V4 [DeepSeek] -->
-            <article class="ai-pin-item tier-4 source-deepseek" data-id="deepseek-r2" data-source="deepseek" data-type="breakthrough" style="left: 10880px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jan 2026</span>
-                <span class="pin-title">DeepSeek R2 & V4</span>
-                <span class="pin-badge badge-deepseek">DeepSeek</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Sparse MoE 1T+ architecture with self-evolving verifiers and zero-latency thinking kernels.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Feb 2026: Claude Sonnet 5 & Opus 5 [Anthropic] -->
-            <article class="ai-pin-item tier-1 source-anthropic" data-id="sonnet-5" data-source="anthropic" data-type="breakthrough" style="left: 11040px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Feb 2026</span>
-                <span class="pin-title">Claude Sonnet 5 & Opus 5</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Anthropic's flagship 5th-generation autonomous engineering and high-speed cognitive architecture.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Mar 2026: Anthropic Mythos 5 [Anthropic] -->
-            <article class="ai-pin-item tier-2 source-anthropic" data-id="mythos-5" data-source="anthropic" data-type="breakthrough" style="left: 11180px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Mar 2026</span>
-                <span class="pin-title">Anthropic Mythos 5</span>
-                <span class="pin-badge badge-anthropic">Anthropic</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Autonomous cyber-defense and frontier agentic paradigm model capable of end-to-end mission orchestration.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Apr 2026: OpenAI o4 & GPT-5.5 [OpenAI] -->
-            <article class="ai-pin-item tier-3 source-openai" data-id="gpt-55" data-source="openai" data-type="breakthrough" style="left: 11320px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Apr 2026</span>
-                <span class="pin-title">OpenAI o4 & GPT-5.5</span>
-                <span class="pin-badge badge-openai">OpenAI</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Omni-agentic system with realtime tool synthesis, hardware interface hooks, and proactive reasoning.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Jun 2026: Gemini 3.1 Pro & Ultra [Google] -->
-            <article class="ai-pin-item tier-4 source-google" data-id="gemini-31-pro" data-source="google" data-type="breakthrough" style="left: 11460px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Jun 2026</span>
-                <span class="pin-title">Gemini 3.1 Pro & Ultra</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Google's breakthrough multi-modal reasoning engine with trillion-token context retrieval and live world modeling.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-
-            <!-- Aug 2026: Gemini 3.5 & Agent Swarms [Google] -->
-            <article class="ai-pin-item tier-1 source-google" data-id="gemini-35" data-source="google" data-type="milestone" style="left: 11600px;">
-              <div class="ai-axis-dot"></div>
-              <div class="ai-stem-down"></div>
-              <div class="ai-pin-pill">
-                <span class="pin-date">Aug 2026</span>
-                <span class="pin-title">Gemini 3.5 & Agent Swarms</span>
-                <span class="pin-badge badge-google">Google</span>
-              </div>
-              <div class="pin-popover">
-                <p class="popover-desc">Distributed autonomous agentic swarm coordinator with formal verification loops and code synthesis.</p>
-                <span class="popover-hint">Click to inspect &rarr;</span>
-              </div>
-            </article>
-          </section>
 
         </div>
       </main>
@@ -1007,7 +407,7 @@
       <!-- Footer Info Bar -->
       <footer class="timeline-footer">
         <div>
-          <span>Horizontal Chronological View (2020&ndash;2026) &bull; 19 Engineering Projects &bull; 27 AI Epochs</span>
+          <span>Horizontal Chronological View (2020&ndash;2026) &bull; 19 Personal Engineering Projects &bull; Open-Source Architectures</span>
         </div>
         <div class="footer-keys">
           <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
@@ -1030,6 +430,6 @@
       </div>
     </aside>
 
-    <script src="./timeline.js?v=3.0.0"></script>
+    <script src="./timeline.js?v=3.1.0"></script>
   </body>
 </html>

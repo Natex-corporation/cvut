@@ -4,8 +4,6 @@
   const viewport = document.getElementById("timeline-viewport");
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectItems = document.querySelectorAll(".project-pin-item");
-  const aiItems = document.querySelectorAll(".ai-pin-item");
-  const allItems = document.querySelectorAll(".project-pin-item, .ai-pin-item");
   const timeButtons = document.querySelectorAll(".time-btn");
   const btnScrollLeft = document.getElementById("btn-scroll-left");
   const btnScrollRight = document.getElementById("btn-scroll-right");
@@ -18,7 +16,6 @@
 
   // --- 1. Global Scroll Containment: Only pan the timeline horizontally ---
   window.addEventListener("wheel", (e) => {
-    // Allow normal vertical scrolling inside the inspector drawer content when open
     if (e.target.closest(".inspector-drawer") || e.target.closest(".drawer-content")) {
       return;
     }
@@ -100,38 +97,33 @@
     });
   });
 
-  // --- 5. Dynamic Filtering ---
+  // --- 5. Dynamic Filtering by Domain ---
   function updateCounts() {
     const countAll = document.getElementById("count-all");
-    const countProjects = document.getElementById("count-projects");
-    const countOpenai = document.getElementById("count-openai");
-    const countAnthropic = document.getElementById("count-anthropic");
-    const countGoogle = document.getElementById("count-google");
+    const countFintech = document.getElementById("count-fintech");
+    const countHardware = document.getElementById("count-hardware");
+    const countVision = document.getElementById("count-vision");
 
-    let all = allItems.length;
-    let projects = projectItems.length;
-    let openai = document.querySelectorAll(`[data-source="openai"]`).length;
-    let anthropic = document.querySelectorAll(`[data-source="anthropic"]`).length;
-    let google = document.querySelectorAll(`[data-source="google"]`).length;
+    let all = projectItems.length;
+    let fintech = document.querySelectorAll(`[data-category="fintech"]`).length;
+    let hardware = document.querySelectorAll(`[data-category="hardware"]`).length;
+    let vision = document.querySelectorAll(`[data-category="ai-vision"]`).length;
 
     if (countAll) countAll.textContent = all;
-    if (countProjects) countProjects.textContent = projects;
-    if (countOpenai) countOpenai.textContent = openai;
-    if (countAnthropic) countAnthropic.textContent = anthropic;
-    if (countGoogle) countGoogle.textContent = google;
+    if (countFintech) countFintech.textContent = fintech;
+    if (countHardware) countHardware.textContent = hardware;
+    if (countVision) countVision.textContent = vision;
   }
 
   function applyFilter(filter) {
-    allItems.forEach((item) => {
+    projectItems.forEach((item) => {
       let match = false;
-      const isProject = item.classList.contains("project-pin-item");
-      const src = item.dataset.source;
+      const cat = item.dataset.category;
 
       if (filter === "all") match = true;
-      else if (filter === "projects") match = isProject;
-      else if (filter === "openai") match = src === "openai";
-      else if (filter === "anthropic") match = src === "anthropic";
-      else if (filter === "google") match = src === "google";
+      else if (filter === "fintech") match = cat === "fintech";
+      else if (filter === "hardware") match = cat === "hardware";
+      else if (filter === "ai-vision") match = cat === "ai-vision";
 
       if (match) {
         item.classList.remove("is-hidden");
@@ -152,7 +144,7 @@
     });
   });
 
-  // --- 6. Deep Technical Inspector Content (Every single project has working action buttons) ---
+  // --- 6. Deep Technical Inspector Content for all 19 Engineering Projects ---
   const PROJECT_DETAILS = {
     // 1. Line Follower 3Pi
     "line-follower-3pi": {
@@ -548,76 +540,6 @@
           <a href="https://github.com/Natex-corporation/insider-trading" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       `
-    },
-
-    // AI Models
-    "gpt-5": {
-      title: "OpenAI GPT-5 (Orion Foundation)",
-      date: "November 2025",
-      status: "Frontier Foundation",
-      badge: "Unified Reasoning & Omni",
-      content: `
-        <div class="drawer-section">
-          <span class="drawer-section-title">Model Overview</span>
-          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>GPT-5</strong> represents OpenAI's breakthrough architectural unification: integrating test-time compute search, real-time multimodal sensory streaming, and autonomous multi-agent tool synthesis into a single foundation model.
-          </p>
-        </div>
-        <div class="drawer-actions">
-          <a href="https://openai.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Official OpenAI Research &#8594;</a>
-        </div>
-      `
-    },
-    "sonnet-5": {
-      title: "Anthropic Claude Sonnet 5 & Opus 5",
-      date: "February 2026",
-      status: "Frontier 5th Generation",
-      badge: "Autonomous Architecture",
-      content: `
-        <div class="drawer-section">
-          <span class="drawer-section-title">Model Overview</span>
-          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>Claude Sonnet 5</strong> is Anthropic's 5th-generation autonomous engineering model, featuring continuous background verification, sub-second latency, and verified SWE-bench leadership across multi-repo codebases.
-          </p>
-        </div>
-        <div class="drawer-actions">
-          <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Official Anthropic Research &#8594;</a>
-        </div>
-      `
-    },
-    "mythos-5": {
-      title: "Anthropic Mythos 5",
-      date: "March 2026",
-      status: "Frontier Autonomous Paradigm",
-      badge: "Cyber & Strategic Agent",
-      content: `
-        <div class="drawer-section">
-          <span class="drawer-section-title">Model Overview</span>
-          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>Anthropic Mythos 5</strong> is Anthropic's dedicated autonomous paradigm model engineered for cyber security, formal theorem proving, and continuous multi-agent mission execution.
-          </p>
-        </div>
-        <div class="drawer-actions">
-          <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Official Anthropic Research &#8594;</a>
-        </div>
-      `
-    },
-    "gemini-31-pro": {
-      title: "Google Gemini 3.1 Pro & Ultra",
-      date: "June 2026",
-      status: "Google Flagship 2026",
-      badge: "World Modeling & Trillion Context",
-      content: `
-        <div class="drawer-section">
-          <span class="drawer-section-title">Model Overview</span>
-          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            <strong>Gemini 3.1 Pro</strong> introduces Google's next-generation world modeling neural engine with trillion-token context retrieval, live interactive software environment simulation, and native self-verifying code generation.
-          </p>
-        </div>
-        <div class="drawer-actions">
-          <a href="https://blog.google/technology/ai/" target="_blank" rel="noopener noreferrer" class="btn-primary">Official Google DeepMind Research &#8594;</a>
-        </div>
-      `
     }
   };
 
@@ -652,19 +574,19 @@
     inspectorDrawer.classList.remove("open");
   }
 
-  allItems.forEach((item) => {
+  projectItems.forEach((item) => {
     item.addEventListener("click", () => {
       const id = item.dataset.id;
-      const titleEl = item.querySelector(".card-title, .pin-title");
-      const descEl = item.querySelector(".card-desc, .popover-desc");
-      const dateEl = item.querySelector(".card-date, .pin-date");
-      const badgeEl = item.querySelector(".card-badge, .pin-badge, .project-badge");
+      const titleEl = item.querySelector(".pin-title");
+      const descEl = item.querySelector(".popover-desc");
+      const dateEl = item.querySelector(".pin-date");
+      const badgeEl = item.querySelector(".project-badge");
 
       const fallbackData = {
         title: titleEl ? titleEl.textContent : "Milestone",
         desc: descEl ? descEl.textContent : "",
         date: dateEl ? dateEl.textContent : "",
-        category: badgeEl ? badgeEl.textContent : "Milestone"
+        category: badgeEl ? badgeEl.textContent : "Project"
       };
 
       openInspector(id, fallbackData);
