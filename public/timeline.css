@@ -104,6 +104,28 @@ html, body {
   gap: 14px;
 }
 
+.nav-crossroad-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+.nav-crossroad-btn:hover {
+  background: var(--bg-surface-elevated);
+  color: #ffffff;
+  border-color: var(--border-active);
+}
+
 .brand-badge {
   display: inline-flex;
   align-items: center;
@@ -236,28 +258,6 @@ html, body {
   color: var(--color-project);
   border-color: rgba(16, 185, 129, 0.3);
   background: var(--color-project-bg);
-}
-
-.nav-crossroad-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: 8px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 150ms ease;
-}
-
-.nav-crossroad-btn:hover {
-  background: var(--bg-surface-elevated);
-  color: #ffffff;
-  border-color: var(--border-active);
 }
 
 /* Canvas Navigation Arrows */
@@ -472,14 +472,29 @@ html, body {
   z-index: 6;
 }
 
-.popover-project {
-  bottom: calc(100% + 8px);
+/* Project Hover Popover: ANCHORED ABOVE THE PILL */
+.project-pin-item .pin-popover {
+  position: absolute;
+  bottom: calc(100% + 12px);
   top: auto;
-  border-color: rgba(16, 185, 129, 0.3);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  width: 290px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #0d1322;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 70;
 }
 
-.project-hint {
-  color: var(--color-project);
+.project-pin-item:hover .pin-popover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ==========================================================================
@@ -554,7 +569,7 @@ html, body {
 }
 
 /* ==========================================================================
-   BOTTOM SWIMLANE: AI Models (3-Tier Staggered Collapsed Pins)
+   BOTTOM SWIMLANE: AI Models (4-Tier Staggered Collapsed Pins)
    ========================================================================== */
 
 .swimlane-ai {
@@ -792,30 +807,32 @@ html, body {
   color: var(--color-breakthrough);
 }
 
-/* 4. Hover Tooltip / Mini-Popover */
-.pin-popover {
+/* AI Model Hover Popover: ANCHORED BELOW THE PILL */
+.ai-pin-item .pin-popover {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 12px);
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
   width: 290px;
   padding: 12px 14px;
   border-radius: 10px;
   background: #0d1322;
   border: 1px solid var(--border-active);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-4px);
-  transition: all 180ms ease;
-  z-index: 50;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 70;
 }
 
-.ai-pin-item:hover .pin-popover,
-.project-pin-item:hover .pin-popover {
+.ai-pin-item:hover .pin-popover {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
+/* Shared Popover Typography */
 .popover-desc {
   font-size: 0.76rem;
   line-height: 1.45;
@@ -828,6 +845,10 @@ html, body {
   font-weight: 750;
   color: var(--color-google);
   display: block;
+}
+
+.project-hint {
+  color: var(--color-project);
 }
 
 /* ==========================================================================

@@ -1,4 +1,4 @@
-﻿import fs from "fs";
+import fs from "fs";
 
 // 19 Personal Engineering Projects (Top Swimlane - 4 Tier Staggering)
 const projects = [
@@ -312,7 +312,7 @@ const html = `<!doctype html>
     <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=2.9.0">
+    <link rel="stylesheet" href="./timeline.css?v=3.0.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -457,7 +457,7 @@ ${aiHtml}
       </div>
     </aside>
 
-    <script src="./timeline.js?v=2.9.0"></script>
+    <script src="./timeline.js?v=3.0.0"></script>
   </body>
 </html>
 `;
