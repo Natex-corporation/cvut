@@ -443,6 +443,9 @@ const jsContent = `(function () {
             A decentralized IoT energy management system that monitors domestic photovoltaic battery state of charge (SoC) and dynamically diverts surplus solar power into water heater thermal storage buffers instead of curtailing or dumping power to the grid.
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/BoilerBattery" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
+        </div>
       \`
     },
 
@@ -459,26 +462,13 @@ const jsContent = `(function () {
             Agricultural sustainability platform tracking soil telemetry, crop rotation patterns, and verifying carbon sequestration credits for agricultural landholders.
           </p>
         </div>
-      \`
-    },
-
-    // 17. RonikCloud & CloudR2
-    "ronik-cloud": {
-      title: "RonikCloud & CloudR2 Hybrid Storage Platform (2025–2026)",
-      date: "November 2025",
-      status: "Cloud Infrastructure",
-      badge: "Cloudflare R2 & Firebase",
-      content: \`
-        <div class="drawer-section">
-          <span class="drawer-section-title">Overview</span>
-          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-            High-performance distributed cloud storage system featuring zero-egress Cloudflare R2 object buckets, Firebase security rules, client-side encryption, and Jenkins continuous deployment.
-          </p>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/cropcarbon" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
         </div>
       \`
     },
 
-    // 18. OptiRadar
+    // 17. OptiRadar
     "opti-radar": {
       title: "OptiRadar / SkyWatch Computer Vision (2026)",
       date: "March 2026",
@@ -491,10 +481,13 @@ const jsContent = `(function () {
             High-frame-rate optical radar system designed for real-time moving object detection, background subtraction, skyward trajectory estimation, and automated camera video stream analysis.
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/OpticalRadar" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
+        </div>
       \`
     },
 
-    // 19. RealEstate Scraper
+    // 18. RealEstate Scraper
     "realestate-scraper": {
       title: "RealEstate Intelligence & Scraper Engine (2026)",
       date: "April 2026",
@@ -507,10 +500,13 @@ const jsContent = `(function () {
             Automated multi-source property intelligence platform scraping, cleaning, deduplicating, and pricing real estate listings across the Czech market with automated TrueNAS deployment.
           </p>
         </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/realestate-scraper" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
+        </div>
       \`
     },
 
-    // 20. Insider Edge
+    // 19. Insider Edge
     "insider-edge": {
       title: "Insider Edge — SEC Form 4 Trading Bot (2026)",
       date: "August 2026",
@@ -665,4 +661,4 @@ const jsContent = `(function () {
 `;
 
 fs.writeFileSync("public/timeline.js", jsContent, "utf8");
-console.log("Successfully generated public/timeline.js with Laser Challenge & 20 Projects!");
+console.log("Successfully generated public/timeline.js!");

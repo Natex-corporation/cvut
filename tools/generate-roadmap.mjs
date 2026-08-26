@@ -1,6 +1,6 @@
 ﻿import fs from "fs";
 
-// 20 Personal Engineering Projects (Top Swimlane - 4 Tier Staggering)
+// 19 Personal Engineering Projects (Top Swimlane - 4 Tier Staggering)
 const projects = [
   {
     id: "line-follower-3pi",
@@ -157,28 +157,18 @@ const projects = [
     date: "Oct 2025",
     title: "CropCarbon Agricultural Telemetry",
     type: "project",
-    pos: 9200,
+    pos: 9300,
     tier: 4,
     badge: "AgTech & Climate",
     desc: "Farm soil telemetry ingestion, carbon sequestration calculation algorithms, and sustainability incentive dashboards."
-  },
-  {
-    id: "ronik-cloud",
-    date: "Nov 2025",
-    title: "RonikCloud & CloudR2 Storage Platform",
-    type: "project",
-    pos: 9700,
-    tier: 1,
-    badge: "Cloud Infrastructure",
-    desc: "Hybrid cloud object storage platform powered by Cloudflare R2 edge workers, Firebase Auth, and Jenkins automation."
   },
   {
     id: "opti-radar",
     date: "Mar 2026",
     title: "OptiRadar / SkyWatch Computer Vision",
     type: "project",
-    pos: 10250,
-    tier: 2,
+    pos: 10000,
+    tier: 1,
     badge: "Computer Vision",
     desc: "Real-time high-frame-rate optical object tracking, motion vector extraction, and skyward trajectory estimation."
   },
@@ -187,8 +177,8 @@ const projects = [
     date: "Apr 2026",
     title: "RealEstate Intelligence & Scraper Engine",
     type: "project",
-    pos: 10750,
-    tier: 3,
+    pos: 10600,
+    tier: 2,
     badge: "Data Engineering",
     desc: "Multi-source real estate aggregation engine, geospatial deduplication, valuation modeling, and TrueNAS deployment."
   },
@@ -197,8 +187,8 @@ const projects = [
     date: "Aug 2026",
     title: "Insider Edge (v1.0.0)",
     type: "project",
-    pos: 11250,
-    tier: 4,
+    pos: 11200,
+    tier: 3,
     badge: "Trading & DevOps",
     desc: "Automated SEC Form 4 insider trading bot with multi-tier risk guardrails, SQLite state engine, and Starlette control room."
   }
@@ -322,7 +312,7 @@ const html = `<!doctype html>
     <title>Engineering Trajectory & AI Timeline (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=2.7.0">
+    <link rel="stylesheet" href="./timeline.css?v=2.8.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -443,7 +433,7 @@ ${aiHtml}
       <!-- Footer Info Bar -->
       <footer class="timeline-footer">
         <div>
-          <span>Horizontal Chronological View (2020&ndash;2026) &bull; 20 Engineering Projects &bull; 27 AI Epochs</span>
+          <span>Horizontal Chronological View (2020&ndash;2026) &bull; 19 Engineering Projects &bull; 27 AI Epochs</span>
         </div>
         <div class="footer-keys">
           <span class="key-hint"><kbd>Drag</kbd> or <kbd>Wheel</kbd> to pan</span>
@@ -466,10 +456,10 @@ ${aiHtml}
       </div>
     </aside>
 
-    <script src="./timeline.js?v=2.7.0"></script>
+    <script src="./timeline.js?v=2.8.0"></script>
   </body>
 </html>
 `;
 
 fs.writeFileSync("public/roadmap.html", html, "utf8");
-console.log("Successfully generated public/roadmap.html with Laser Challenge & 20 Projects!");
+console.log("Successfully generated public/roadmap.html!");
