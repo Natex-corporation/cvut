@@ -256,7 +256,39 @@
       `
     },
 
-    // 6. Final Work Thesis
+    // 6. Laser Challenge M^2 Profiler
+    "laser-challenge-m2": {
+      title: "Laser Challenge — M² Laser Beam Quality Profiler (2022)",
+      date: "February 2022",
+      status: "Optics & Physics Competition",
+      badge: "ISO 11146 Laser Profilometry",
+      content: `
+        <div class="drawer-section">
+          <span class="drawer-section-title">Competition &amp; Physics Overview</span>
+          <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            Hardware-software optical profilometry system engineered for the <strong>Laser Challenge / Science Challenge</strong> physics and engineering competition. The system automated the precise measurement of laser beam quality propagation factor (<strong>M²</strong>) in compliance with the <strong>ISO 11146</strong> standard.
+          </p>
+        </div>
+        <div class="drawer-section">
+          <span class="drawer-section-title">Technical Architecture &amp; Methodology</span>
+          <div class="feature-grid">
+            <div class="feature-box">
+              <strong>Motorized Knife-Edge Stage</strong>
+              <p>Precision microstepping translation stage driving an opaque razor blade across the focused laser beam cross-section with sub-micron spatial resolution.</p>
+            </div>
+            <div class="feature-box">
+              <strong>Mathematical Data Analysis Engine</strong>
+              <p>C++ and Python regression fitting transmission intensity profiles to complementary Gaussian error functions (erf) to extract beam waist (w₀), Rayleigh range (z_R), and divergence (θ).</p>
+            </div>
+          </div>
+        </div>
+        <div class="drawer-actions">
+          <a href="https://github.com/Natex-corporation/LaserChalllange" target="_blank" rel="noopener noreferrer" class="btn-primary">Open GitHub Repository &#8594;</a>
+        </div>
+      `
+    },
+
+    // 7. Final Work Thesis
     "final-work-thesis": {
       title: "High School Graduation Capstone: ThomasTheAI (2022)",
       date: "April 2022",
@@ -275,7 +307,7 @@
       `
     },
 
-    // 7. ThomasTheAI 2.0
+    // 8. ThomasTheAI 2.0
     "thomas-ai-2": {
       title: "ThomasTheAI 2.0 & Desktop Trading App (2022)",
       date: "December 2022",
@@ -291,7 +323,7 @@
       `
     },
 
-    // 8. Ronik-App & RealTrade
+    // 9. Ronik-App & RealTrade
     "ronik-real-trade": {
       title: "Ronik-App & RealTrade Execution Engine (2023)",
       date: "February 2023",
@@ -307,7 +339,7 @@
       `
     },
 
-    // 9. Plutus Models Service
+    // 10. Plutus Models Service
     "plutus-models": {
       title: "Plutus ML Inference Service & Models (2023)",
       date: "May 2023",
@@ -323,7 +355,7 @@
       `
     },
 
-    // 10. Hack Austria
+    // 11. Hack Austria
     "hack-austria": {
       title: "HackAustria — Raiffeisen PSD2 Open Banking (2023)",
       date: "July 2023",
@@ -342,7 +374,7 @@
       `
     },
 
-    // 11. AAA Trading
+    // 12. AAA Trading
     "aaa-trading": {
       title: "AAA Trading Live Execution Gateway (2023)",
       date: "November 2023",
@@ -358,7 +390,7 @@
       `
     },
 
-    // 12. Plastic Production
+    // 13. Plastic Production
     "plastic-production": {
       title: "RonikRecycle / Distributed Manufacturing OS (2024)",
       date: "March 2024",
@@ -377,7 +409,7 @@
       `
     },
 
-    // 13. Enerfis Testing Tools
+    // 14. Enerfis Testing Tools
     "enerfis-testing": {
       title: "Enerfis IoT Telemetry & QA Automation (2024)",
       date: "August 2024",
@@ -396,7 +428,7 @@
       `
     },
 
-    // 14. BoilerBattery (Safe architecture)
+    // 15. BoilerBattery (Safe architecture)
     "boiler-battery": {
       title: "BoilerBattery — Smart Solar Energy Diverter (2025)",
       date: "April 2025",
@@ -412,7 +444,7 @@
       `
     },
 
-    // 15. CropCarbon
+    // 16. CropCarbon
     "crop-carbon": {
       title: "CropCarbon — Agricultural Telemetry Engine (2025)",
       date: "October 2025",
@@ -428,7 +460,7 @@
       `
     },
 
-    // 16. RonikCloud & CloudR2
+    // 17. RonikCloud & CloudR2
     "ronik-cloud": {
       title: "RonikCloud & CloudR2 Hybrid Storage Platform (2025–2026)",
       date: "November 2025",
@@ -444,7 +476,7 @@
       `
     },
 
-    // 17. OptiRadar
+    // 18. OptiRadar
     "opti-radar": {
       title: "OptiRadar / SkyWatch Computer Vision (2026)",
       date: "March 2026",
@@ -460,7 +492,7 @@
       `
     },
 
-    // 18. RealEstate Scraper
+    // 19. RealEstate Scraper
     "realestate-scraper": {
       title: "RealEstate Intelligence & Scraper Engine (2026)",
       date: "April 2026",
@@ -476,7 +508,7 @@
       `
     },
 
-    // 19. Insider Edge
+    // 20. Insider Edge
     "insider-edge": {
       title: "Insider Edge — SEC Form 4 Trading Bot (2026)",
       date: "August 2026",
