@@ -1,4 +1,4 @@
-﻿import fs from "fs";
+import fs from "fs";
 
 // 19 Personal Engineering Projects (4-Tier Staggered Layout)
 const projects = [
@@ -230,7 +230,7 @@ const html = `<!doctype html>
     <title>Engineering Trajectory Roadmap (2020–2026)</title>
     <link rel="canonical" href="https://cvut-crossroad.com/roadmap">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./timeline.css?v=3.1.0">
+    <link rel="stylesheet" href="./timeline.css?v=3.2.0">
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>
@@ -359,7 +359,7 @@ ${projectsHtml}
       </div>
     </aside>
 
-    <script src="./timeline.js?v=3.1.0"></script>
+    <script src="./timeline.js?v=3.2.0"></script>
   </body>
 </html>
 `;

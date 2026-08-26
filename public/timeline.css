@@ -291,6 +291,8 @@ html, body {
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
   overscroll-behavior-x: contain;
   overscroll-behavior-y: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 60px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 60px), transparent 100%);
 }
 
 .timeline-viewport:active {
